@@ -1,0 +1,568 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.2" />
+
+
+
+
+
+
+<meta name="description" content="NDk配置打开Default Preferences-&amp;gt;Appearance &amp;amp; Behavior-&amp;gt;System Settings-&amp;gt;Android SDK-&amp;gt;SDk Tools-&amp;gt;下载Cmake、LLDB、NDK
+
+一、创建支持C/C++的新项目
+创建新项目-&amp;gt;勾上include C++ Support-&amp;gt;C++ Standard选项:">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android:NDK在mac上的使用">
+<meta property="og:url" content="http://zxos.github.io/2016/12/25/ndk01/index.html">
+<meta property="og:site_name" content="zxos' blog">
+<meta property="og:description" content="NDk配置打开Default Preferences-&amp;gt;Appearance &amp;amp; Behavior-&amp;gt;System Settings-&amp;gt;Android SDK-&amp;gt;SDk Tools-&amp;gt;下载Cmake、LLDB、NDK
+
+一、创建支持C/C++的新项目
+创建新项目-&amp;gt;勾上include C++ Support-&amp;gt;C++ Standard选项:">
+<meta property="og:updated_time" content="2016-12-27T13:51:35.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android:NDK在mac上的使用">
+<meta name="twitter:description" content="NDk配置打开Default Preferences-&amp;gt;Appearance &amp;amp; Behavior-&amp;gt;System Settings-&amp;gt;Android SDK-&amp;gt;SDk Tools-&amp;gt;下载Cmake、LLDB、NDK
+
+一、创建支持C/C++的新项目
+创建新项目-&amp;gt;勾上include C++ Support-&amp;gt;C++ Standard选项:">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://zxos.github.io/2016/12/25/ndk01/"/>
+
+
+  <title> Android:NDK在mac上的使用 | zxos' blog </title>
+</head>
+
+<body itemscope itemtype="//schema.org/WebPage" lang="">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">zxos' blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Android:NDK在mac上的使用
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-12-25T17:03:08+08:00" content="2016-12-25">
+              2016-12-25
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h4 id="NDk配置"><a href="#NDk配置" class="headerlink" title="NDk配置"></a>NDk配置</h4><p>打开Default Preferences<br>-&gt;Appearance &amp; Behavior<br>-&gt;System Settings<br>-&gt;Android SDK<br>-&gt;SDk Tools<br>-&gt;下载Cmake、LLDB、NDK</p>
+<hr>
+<p>一、创建支持C/C++的新项目</p>
+<p>创建新项目<br>-&gt;勾上include C++ Support<br>-&gt;C++ Standard选项:     选择  C++ 标准<br>-&gt;Exceptions Support选项: 是否启用对 C++ 异常处理的支持<br>-&gt;Runtime Type Information Support选项: 是否支持支持 RTTI</p>
+<p>之后Android Studio便会自动创建支持C++的Hello模版</p>
+<hr>
+<p>二、在原有项目上支持C/C++</p>
+<p>分3步骤<br>1、创建新的原生文件</p>
+<p>-&gt;在根目录创建”CMakeLists.txt”</p>
+<p>2、创建CMake构建脚本</p>
+<p>-&gt;添加CMake命令,cmake_minimum_required()和add_library()<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line">cmake_minimum_required(VERSION 3.4.1)</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">add_library( native-lib</div><div class="line"></div><div class="line">             SHARED</div><div class="line"></div><div class="line">             src/main/cpp/native-lib.cpp )</div></pre></td></tr></table></figure></p>
+<p>add_library()指向源文件，为确保CMake可以定位头文件，需添加 include_directories()</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">add_library(...)</div><div class="line"></div><div class="line"># Specifies a path to native header files.</div><div class="line">include_directories(src/main/cpp/include/)</div></pre></td></tr></table></figure>
+<p>添加NDK API</p>
+<p>-&gt;日志库<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">find_library( # Defines the name of the path variable that stores the</div><div class="line">              # location of the NDK library.</div><div class="line">              log-lib</div><div class="line"></div><div class="line">              # Specifies the name of the NDK library that</div><div class="line">              # CMake needs to locate.</div><div class="line">              log )</div></pre></td></tr></table></figure></p>
+<p>为了确保您的原生库可以在 log 库中调用函数，您需要使用 CMake 构建脚本中的 target_link_libraries() 命令关联库：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">find_library(...)</div><div class="line"></div><div class="line"># Links your native library against one or more other native libraries.</div><div class="line">target_link_libraries( # Specifies the target library.</div><div class="line">                       native-lib</div><div class="line"></div><div class="line">                       # Links the log library to the target library.</div><div class="line">                       $&#123;log-lib&#125; )</div></pre></td></tr></table></figure></p>
+<p>为了确保您的原生库可以在 log 库中调用函数，您需要使用 CMake 构建脚本中的 target_link_libraries() 命令关联库：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">find_library(...)</div><div class="line"></div><div class="line"># Links your native library against one or more other native libraries.</div><div class="line">target_link_libraries( # Specifies the target library.</div><div class="line">                       native-lib</div><div class="line"></div><div class="line">                       # Links the log library to the target library.</div><div class="line">                       $&#123;log-lib&#125; )</div></pre></td></tr></table></figure>
+<p>以下命令可以指示 CMake 构建 android_native_app_glue.c，后者会将 NativeActivity 生命周期事件和触摸输入置于静态库中并将静态库关联到 native-lib：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">add_library( app-glue</div><div class="line">             STATIC</div><div class="line">             $&#123;ANDROID_NDK&#125;/sources/android/native_app_glue/android_native_app_glue.c )</div><div class="line"></div><div class="line"># You need to link static libraries against your shared native library.</div><div class="line">target_link_libraries( native-lib app-glue $&#123;log-lib&#125; )</div></pre></td></tr></table></figure></p>
+<p>添加其他预构建库</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">add_library( imported-lib</div><div class="line">             SHARED</div><div class="line">             IMPORTED )</div><div class="line">             </div><div class="line">set_target_properties( imported-lib</div><div class="line"></div><div class="line">                       PROPERTIES IMPORTED_LOCATION</div><div class="line"></div><div class="line">                       imported-lib/src/$&#123;ANDROID_ABI&#125;/libimported-lib.so )</div><div class="line"></div><div class="line">include_directories( imported-lib/include/ )</div><div class="line"></div><div class="line">target_link_libraries( native-lib imported-lib app-glue $&#123;log-lib&#125; )</div></pre></td></tr></table></figure>
+<p>3、让Gradle关联原生库</p>
+<p>-&gt; 先在app目录下创建CMakeLists.txt,添加cmake_minimum_required(VERSION 3.4.1)，add_library(),set_target_properties(),target_link_libraries()<br>-&gt;菜单选中 link C＋＋ support 并关联CMakeLists.txt</p>
+<hr>
+<h2 id="tag-NDK"><a href="#tag-NDK" class="headerlink" title="tag: NDK"></a>tag: NDK</h2>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/12/24/agera01/" rel="next" title="框架使用系列《一》    －Agera_01">
+                <i class="fa fa-chevron-left"></i> 框架使用系列《一》    －Agera_01
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/12/28/Angular01/" rel="prev" title="Angular笔记01">
+                Angular笔记01 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="zxos" />
+          <p class="site-author-name" itemprop="name">zxos</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">7</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#NDk配置"><span class="nav-number">1.</span> <span class="nav-text">NDk配置</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tag-NDK"><span class="nav-number"></span> <span class="nav-text">tag: NDK</span></a></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">zxos</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.2"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+</body>
+</html>
