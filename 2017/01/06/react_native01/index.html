@@ -85,27 +85,24 @@
 
 
 <meta name="description" content="常用组件文本输入     TextInput导航        Navigator
-ViewTextScrollViewImageListViewTouchableHighlight
+ViewTextScrollViewImageListViewTouchableHighlightTouchableNativeFeedbackTouchableOpacityTouchableWithoutFeedbackViewPagerAndroid
 常用引入包Redux来统一管理数据流
-网络库     frisbee、axios
-安装python2npm              包管理node             环境react-native-cli 脚手">
+网络库     fr">
 <meta property="og:type" content="article">
 <meta property="og:title" content="React Native笔记01">
 <meta property="og:url" content="http://zxos.github.io/2017/01/06/react_native01/index.html">
 <meta property="og:site_name" content="zxos' blog">
 <meta property="og:description" content="常用组件文本输入     TextInput导航        Navigator
-ViewTextScrollViewImageListViewTouchableHighlight
+ViewTextScrollViewImageListViewTouchableHighlightTouchableNativeFeedbackTouchableOpacityTouchableWithoutFeedbackViewPagerAndroid
 常用引入包Redux来统一管理数据流
-网络库     frisbee、axios
-安装python2npm              包管理node             环境react-native-cli 脚手">
-<meta property="og:updated_time" content="2017-01-07T10:43:27.000Z">
+网络库     fr">
+<meta property="og:updated_time" content="2017-01-07T11:31:29.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="React Native笔记01">
 <meta name="twitter:description" content="常用组件文本输入     TextInput导航        Navigator
-ViewTextScrollViewImageListViewTouchableHighlight
+ViewTextScrollViewImageListViewTouchableHighlightTouchableNativeFeedbackTouchableOpacityTouchableWithoutFeedbackViewPagerAndroid
 常用引入包Redux来统一管理数据流
-网络库     frisbee、axios
-安装python2npm              包管理node             环境react-native-cli 脚手">
+网络库     fr">
 
 
 
@@ -185,7 +182,7 @@ ViewTextScrollViewImageListViewTouchableHighlight
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-            Home
+            Startseite
           </a>
         </li>
       
@@ -193,7 +190,7 @@ ViewTextScrollViewImageListViewTouchableHighlight
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
-            Archives
+            Archiv
           </a>
         </li>
       
@@ -246,7 +243,7 @@ ViewTextScrollViewImageListViewTouchableHighlight
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Posted on</span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
             <time itemprop="dateCreated" datetime="2017-01-06T20:58:05+08:00" content="2017-01-06">
               2017-01-06
             </time>
@@ -276,9 +273,9 @@ ViewTextScrollViewImageListViewTouchableHighlight
 
       
         <h4 id="常用组件"><a href="#常用组件" class="headerlink" title="常用组件"></a>常用组件</h4><p>文本输入     TextInput<br>导航        Navigator</p>
-<p>View<br>Text<br>ScrollView<br>Image<br>ListView<br>TouchableHighlight</p>
+<p>View<br>Text<br>ScrollView<br>Image<br>ListView<br>TouchableHighlight<br>TouchableNativeFeedback<br>TouchableOpacity<br>TouchableWithoutFeedback<br>ViewPagerAndroid</p>
 <h4 id="常用引入包"><a href="#常用引入包" class="headerlink" title="常用引入包"></a>常用引入包</h4><p>Redux来统一管理数据流</p>
-<p>网络库     frisbee、axios</p>
+<p>网络库     frisbee、axios<br>防止定时器clear时出bug    react-timer-mixin  （ES5）</p>
 <h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><p>python2<br>npm              包管理<br>node             环境<br>react-native-cli 脚手架<br>Nuclide          FaceBook的IDE</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">npm 替换淘宝镜像源</div><div class="line"></div><div class="line">1.通过config命令</div><div class="line"></div><div class="line">npm config set registry https://registry.npm.taobao.org </div><div class="line">npm info underscore （如果上面配置正确这个命令会有字符串response）</div><div class="line">2.命令行指定</div><div class="line"></div><div class="line">npm --registry https://registry.npm.taobao.org info underscore </div><div class="line">3.编辑 ~/.npmrc 加入下面内容</div><div class="line"></div><div class="line">registry = https://registry.npm.taobao.org</div></pre></td></tr></table></figure>
 <h4 id="自定义组件"><a href="#自定义组件" class="headerlink" title="自定义组件"></a>自定义组件</h4><p>Component   </p>
@@ -315,7 +312,36 @@ ViewTextScrollViewImageListViewTouchableHighlight
 <p>资源属性是一个对象Object<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;Image source=&#123;&#123;uri: &apos;something.jpg&apos;&#125;&#125; /&gt;</div><div class="line"></div><div class="line"></div><div class="line">裁剪</div><div class="line">&#123;uri: ..., crop: &#123;left: 10, top: 50, width: 20, height: 40&#125;&#125;ß</div></pre></td></tr></table></figure></p>
 <p>实现背景<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">return (</div><div class="line">  &lt;Image source=&#123;...&#125;&gt;</div><div class="line">    &lt;Text&gt;Inside&lt;/Text&gt;</div><div class="line">  &lt;/Image&gt;</div><div class="line">);</div></pre></td></tr></table></figure></p>
 <p>圆角<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">iOS暂不支持</div><div class="line"></div><div class="line"></div><div class="line">borderTopLeftRadius</div><div class="line">borderTopRightRadius</div><div class="line">borderBottomLeftRadius</div><div class="line">borderBottomRightRadius</div></pre></td></tr></table></figure></p>
-<h4 id="处理触摸事件"><a href="#处理触摸事件" class="headerlink" title="处理触摸事件"></a>处理触摸事件</h4>
+<h4 id="处理触摸事件"><a href="#处理触摸事件" class="headerlink" title="处理触摸事件"></a>处理触摸事件</h4><p>可点击控件，Touchable开头</p>
+<ul>
+<li>TouchableHighlight来制作按钮或者链接</li>
+<li>Android上还可以使用TouchableNativeFeedback,类似墨水涟漪的视觉效果</li>
+<li>TouchableOpacity会在用户手指按下时降低按钮的透明度，而不会改变背景的颜色。</li>
+<li>TouchableWithoutFeedback, 不显示任何视觉反馈。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">class MyButton extends Component &#123;</div><div class="line">  _onPressButton() &#123;</div><div class="line">    console.log(&quot;You tapped the button!&quot;);</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  render() &#123;</div><div class="line">    return (</div><div class="line">      &lt;TouchableHighlight onPress=&#123;this._onPressButton&#125;&gt;</div><div class="line">        &lt;Text&gt;Button&lt;/Text&gt;</div><div class="line">      &lt;/TouchableHighlight&gt;</div><div class="line">    );</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>长按 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">onLongPress属性</div></pre></td></tr></table></figure>
+<p>在列表中上下滑动和在视图上左右滑动 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ScrollView可以在垂直或水平方向滚动，还可以配置pagingEnabled属性来让用户整屏整屏的滑动。此外，水平方向的滑动还可以使用Android上的ViewPagerAndroid 组件。</div></pre></td></tr></table></figure>
+<p>双指缩放</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">在ScrollView中只放置一个组件，设置maximumZoomScale和minimumZoomScale</div></pre></td></tr></table></figure>
+<h4 id="动画"><a href="#动画" class="headerlink" title="动画"></a>动画</h4><p>Animated</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div></pre></td><td class="code"><pre><div class="line">class Playground extends React.Component &#123;</div><div class="line">  constructor(props: any) &#123;</div><div class="line">    super(props);</div><div class="line">    this.state = &#123;</div><div class="line">      bounceValue: new Animated.Value(0),</div><div class="line">    &#125;;</div><div class="line">  &#125;</div><div class="line">  render(): ReactElement &#123;</div><div class="line">    return (</div><div class="line">      &lt;Animated.Image                         // 可选的基本组件类型: Image, Text, View</div><div class="line">        source=&#123;&#123;uri: &apos;http://i.imgur.com/XMKOH81.jpg&apos;&#125;&#125;</div><div class="line">        style=&#123;&#123;</div><div class="line">          flex: 1,</div><div class="line">          transform: [                        // `transform`是一个有序数组（动画按顺序执行）</div><div class="line">            &#123;scale: this.state.bounceValue&#125;,  // 将`bounceValue`赋值给 `scale`</div><div class="line">          ]</div><div class="line">        &#125;&#125;</div><div class="line">      /&gt;</div><div class="line">    );</div><div class="line">  &#125;</div><div class="line">  componentDidMount() &#123;</div><div class="line">    this.state.bounceValue.setValue(1.5);     // 设置一个较大的初始值</div><div class="line">    Animated.spring(                          // 可选的基本动画类型: spring, decay, timing</div><div class="line">      this.state.bounceValue,                 // 将`bounceValue`值动画化</div><div class="line">      &#123;</div><div class="line">        toValue: 0.8,                         // 将其值以动画的形式改到一个较小值</div><div class="line">        friction: 1,                          // Bouncier spring</div><div class="line">      &#125;</div><div class="line">    ).start();                                // 开始执行动画</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">spring: 基础的单次弹跳物理模型，符合Origami设计标准</div><div class="line">        friction: 摩擦力，默认为7.</div><div class="line">        tension: 张力，默认40。</div><div class="line">decay: 以一个初始速度开始并且逐渐减慢停止。</div><div class="line">        velocity: 起始速度，必填参数。</div><div class="line">        deceleration: 速度衰减比例，默认为0.997。</div><div class="line">timing: 从时间范围映射到渐变的值。</div><div class="line">        duration: 动画持续的时间（单位是毫秒），默认为500。</div><div class="line">        easing：一个用于定义曲线的渐变函数。阅读Easing模块可以找到许多预定义的函数。iOS默认为Easing.inOut(Easing.ease)。</div><div class="line">        delay: 在一段时间之后开始动画（单位是毫秒），默认为0。</div></pre></td></tr></table></figure>
+<p>组合动画</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">parallel（同时执行）、sequence（顺序执行）、stagger和delay来组合使用。</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">Animated.sequence([            // 首先执行decay动画，结束后同时执行spring和twirl动画</div><div class="line">  Animated.decay(position, &#123;   // 滑行一段距离后停止</div><div class="line">    velocity: &#123;x: gestureState.vx, y: gestureState.vy&#125;, // 根据用户的手势设置速度</div><div class="line">    deceleration: 0.997,</div><div class="line">  &#125;),</div><div class="line">  Animated.parallel([          // 在decay之后并行执行：</div><div class="line">    Animated.spring(position, &#123;</div><div class="line">      toValue: &#123;x: 0, y: 0&#125;    // 返回到起始点开始</div><div class="line">    &#125;),</div><div class="line">    Animated.timing(twirl, &#123;   // 同时开始旋转</div><div class="line">      toValue: 360,</div><div class="line">    &#125;),</div><div class="line">  ]),</div><div class="line">]).start();                    // 执行这一整套动画序列</div></pre></td></tr></table></figure>
+<p>插值 interpolate</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">value.interpolate(&#123;</div><div class="line">  inputRange: [0, 1],</div><div class="line">  outputRange: [0, 100],</div><div class="line">&#125;);</div><div class="line"></div><div class="line"></div><div class="line">支持多区间定义</div><div class="line">value.interpolate(&#123;</div><div class="line">  inputRange: [-300, -100, 0, 100, 101],</div><div class="line">  outputRange: [300,    0, 1,   0,   0],</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>跟踪动态值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">Animated.spring(follower, &#123;toValue: leader&#125;).start();</div><div class="line">Animated.timing(opacity, &#123;</div><div class="line">  toValue: pan.x.interpolate(&#123;</div><div class="line">    inputRange: [0, 300],</div><div class="line">    outputRange: [1, 0],</div><div class="line">  &#125;),</div><div class="line">&#125;).start();</div></pre></td></tr></table></figure>
+<p>LayoutAnimation 允许你在全局范围内创建和更新动画</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">如果要在Android上使用LayoutAnimation，那么目前还需要在UIManager中启用：</div><div class="line"></div><div class="line">UIManager.setLayoutAnimationEnabledExperimental &amp;&amp; UIManager.setLayoutAnimationEnabledExperimental(true);</div></pre></td></tr></table></figure>
+<p>setNativeProps 方法可以使我们直接修改基于原生视图的组件的属性，而不需要使用setState来重新渲染整个组件树。</p>
+<h4 id="定时器"><a href="#定时器" class="headerlink" title="定时器"></a>定时器</h4><p>setTimeout, clearTimeout<br>setInterval, clearInterval<br>setImmediate, clearImmediate<br>requestAnimationFrame, cancelAnimationFrame</p>
+<p>TimerMixin（ES5）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">这个库并没有跟着React Native一起发布。你需要在项目文件夹下输入npm i react-timer-mixin --save来单独安装它。</div><div class="line"></div><div class="line">var TimerMixin = require(&apos;react-timer-mixin&apos;);</div><div class="line"></div><div class="line">var Component = React.createClass(&#123;</div><div class="line">  mixins: [TimerMixin],</div><div class="line">  componentDidMount: function() &#123;</div><div class="line">    this.setTimeout(</div><div class="line">      () =&gt; &#123; console.log(&apos;这样我就不会导致内存泄露!&apos;); &#125;,</div><div class="line">      500</div><div class="line">    );</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>ES6代替<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">import React,&#123;</div><div class="line">  Component</div><div class="line">&#125; from &apos;react&apos;;</div><div class="line"></div><div class="line">export default class Hello extends Component &#123;</div><div class="line">  componentDidMount() &#123;</div><div class="line">    this.timer = setTimeout(</div><div class="line">      () =&gt; &#123; console.log(&apos;把一个定时器的引用挂在this上&apos;); &#125;,</div><div class="line">      500</div><div class="line">    );</div><div class="line">  &#125;</div><div class="line">  componentWillUnmount() &#123;</div><div class="line">    // 如果存在this.timer，则使用clearTimeout清空。</div><div class="line">    // 如果你使用多个timer，那么用多个变量，或者用个数组来保存引用，然后逐个clear</div><div class="line">    this.timer &amp;&amp; clearTimeout(this.timer);</div><div class="line">  &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+
       
     </div>
 
@@ -399,10 +425,10 @@ ViewTextScrollViewImageListViewTouchableHighlight
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            Table of Contents
+            Inhaltsverzeichnis
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
-            Overview
+            Übersicht
           </li>
         </ul>
       
@@ -418,8 +444,8 @@ ViewTextScrollViewImageListViewTouchableHighlight
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">7</span>
-              <span class="site-state-item-name">posts</span>
+              <span class="site-state-item-count">8</span>
+              <span class="site-state-item-name">Artikel</span>
             </a>
           </div>
 
@@ -450,7 +476,7 @@ ViewTextScrollViewImageListViewTouchableHighlight
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#常用组件"><span class="nav-number">1.</span> <span class="nav-text">常用组件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#常用引入包"><span class="nav-number">2.</span> <span class="nav-text">常用引入包</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装"><span class="nav-number">3.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#自定义组件"><span class="nav-number">4.</span> <span class="nav-text">自定义组件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#弹性Flex-宽高"><span class="nav-number">5.</span> <span class="nav-text">弹性Flex 宽高</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用Flexbox布局"><span class="nav-number">6.</span> <span class="nav-text">使用Flexbox布局</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#处理文本输入"><span class="nav-number">7.</span> <span class="nav-text">处理文本输入</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ScrollView"><span class="nav-number">8.</span> <span class="nav-text">ScrollView</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ListView"><span class="nav-number">9.</span> <span class="nav-text">ListView</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#网络"><span class="nav-number">10.</span> <span class="nav-text">网络</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Navigator"><span class="nav-number">11.</span> <span class="nav-text">Navigator</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#颜色格式支持"><span class="nav-number">12.</span> <span class="nav-text">颜色格式支持</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#图片"><span class="nav-number">13.</span> <span class="nav-text">图片</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#处理触摸事件"><span class="nav-number">14.</span> <span class="nav-text">处理触摸事件</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#常用组件"><span class="nav-number">1.</span> <span class="nav-text">常用组件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#常用引入包"><span class="nav-number">2.</span> <span class="nav-text">常用引入包</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装"><span class="nav-number">3.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#自定义组件"><span class="nav-number">4.</span> <span class="nav-text">自定义组件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#弹性Flex-宽高"><span class="nav-number">5.</span> <span class="nav-text">弹性Flex 宽高</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用Flexbox布局"><span class="nav-number">6.</span> <span class="nav-text">使用Flexbox布局</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#处理文本输入"><span class="nav-number">7.</span> <span class="nav-text">处理文本输入</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ScrollView"><span class="nav-number">8.</span> <span class="nav-text">ScrollView</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ListView"><span class="nav-number">9.</span> <span class="nav-text">ListView</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#网络"><span class="nav-number">10.</span> <span class="nav-text">网络</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Navigator"><span class="nav-number">11.</span> <span class="nav-text">Navigator</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#颜色格式支持"><span class="nav-number">12.</span> <span class="nav-text">颜色格式支持</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#图片"><span class="nav-number">13.</span> <span class="nav-text">图片</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#处理触摸事件"><span class="nav-number">14.</span> <span class="nav-text">处理触摸事件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#动画"><span class="nav-number">15.</span> <span class="nav-text">动画</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#定时器"><span class="nav-number">16.</span> <span class="nav-text">定时器</span></a></li></ol></div>
             
           </div>
         </section>
@@ -477,7 +503,7 @@ ViewTextScrollViewImageListViewTouchableHighlight
 </div>
 
 <div class="powered-by">
-  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">
