@@ -1,0 +1,543 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.2" />
+
+
+
+
+
+
+<meta name="description" content="安装12345npm install --save reduxnpm install --save react-reduxnpm install --save-dev redux-devtools
+使用Redux1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Redux笔记01">
+<meta property="og:url" content="http://zxos.github.io/2017/01/13/Redux01/index.html">
+<meta property="og:site_name" content="zxos' blog">
+<meta property="og:description" content="安装12345npm install --save reduxnpm install --save react-reduxnpm install --save-dev redux-devtools
+使用Redux1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515">
+<meta property="og:updated_time" content="2017-01-14T19:13:51.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Redux笔记01">
+<meta name="twitter:description" content="安装12345npm install --save reduxnpm install --save react-reduxnpm install --save-dev redux-devtools
+使用Redux1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://zxos.github.io/2017/01/13/Redux01/"/>
+
+
+  <title> Redux笔记01 | zxos' blog </title>
+</head>
+
+<body itemscope itemtype="//schema.org/WebPage" lang="zh-CN">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">zxos' blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            Startseite
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+            Archiv
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Redux笔记01
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <time itemprop="dateCreated" datetime="2017-01-13T11:59:16+08:00" content="2017-01-13">
+              2017-01-13
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">npm install --save redux</div><div class="line"></div><div class="line"></div><div class="line">npm install --save react-redux</div><div class="line">npm install --save-dev redux-devtools</div></pre></td></tr></table></figure>
+<h4 id="使用Redux"><a href="#使用Redux" class="headerlink" title="使用Redux"></a>使用Redux</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div></pre></td><td class="code"><pre><div class="line">不同框架绑定</div><div class="line"></div><div class="line">react-redux         — React</div><div class="line">ng-redux            — Angular</div><div class="line">ng2-redux           — Angular 2</div><div class="line">backbone-redux      — Backbone</div><div class="line">redux-falcor        — Falcor</div><div class="line">deku-redux          — Deku</div><div class="line"></div><div class="line"></div><div class="line">中间件</div><div class="line"></div><div class="line">redux-thunk                     — 用最简单的方式搭建异步 action 构造器</div><div class="line">redux-promise                   — 遵从 FSA 标准的 promise 中间件</div><div class="line">redux-axios-middleware          — 使用 axios HTTP 客户端获取数据的 Redux 中间件</div><div class="line">redux-observable                — Redux 的 RxJS 中间件</div><div class="line">redux-rx                        — 给 Redux 用的 RxJS 工具，包括观察变量的中间件</div><div class="line">redux-logger                    — 记录所有 Redux action 和下一次 state 的日志</div><div class="line">redux-immutable-state-invariant — 开发中的状态变更提醒</div><div class="line">redux-unhandled-action          — 开发过程中，若 Action 未使 State 发生变化则发出警告</div><div class="line">redux-analytics                 — Redux middleware 分析</div><div class="line">redux-gen                       — Redux middleware 生成器</div><div class="line">redux-saga                      — Redux 应用的另一种副作用 model</div><div class="line">redux-action-tree               — Redux 的可组合性 Cerebral-style 信号</div><div class="line">apollo-client                   — 针对 GraphQL 服务器及基于 Redux 的 UI 框架的缓存客户端</div><div class="line"></div><div class="line"></div><div class="line">路由</div><div class="line"></div><div class="line">redux-simple-router             — 保持 React Router 和 Redux 同步</div><div class="line">redux-router                    — 由 React Router 绑定到 Redux 的库</div><div class="line"></div><div class="line"></div><div class="line">组件</div><div class="line"></div><div class="line">redux-form                      — 在 Redux 中时时持有 React 表格的 state</div><div class="line">react-redux-form                — 在 React 中使用 Redux 生成表格</div><div class="line"></div><div class="line"></div><div class="line">增强器（Enhancer）</div><div class="line"></div><div class="line">redux-batched-subscribe         — 针对 store subscribers 的自定义批处理与防跳请求</div><div class="line">redux-history-transitions       — 基于独断的 action 的 history 库转换</div><div class="line">redux-optimist                  — 使 action 可稍后提交或撤销</div><div class="line">redux-optimistic-ui             — A reducer enhancer to enable type-agnostic optimistic updates 允许对未知类型进行更新的 reducer 增强器</div><div class="line">redux-undo                      — 使 reducer 便捷的重做/撤销，以及 action 记录功能</div><div class="line">redux-ignore                    — 通过数组或过滤功能忽略 redux action</div><div class="line">redux-recycle                   — 在确定的 action 上重置 redux 的 state</div><div class="line">redux-batched-actions           — 单用户通知去 dispatch 多个 action</div><div class="line">redux-search                    — 自动 index 站点资源并实现即时搜索</div><div class="line">redux-electron-store            — Store 增强器， 可同步不同 Electron 进程上的多个 Redux store</div><div class="line">redux-loop                      — Sequence effects purely and naturally by returning them from your reducers</div><div class="line">redux-side-effects              — Utilize Generators for declarative yielding of side effects from your pure reducers</div><div class="line"></div><div class="line"></div><div class="line">工具集</div><div class="line"></div><div class="line">reselect                    — 受 NuclearJS 启发，有效派生数据的选择器</div><div class="line">normalizr                   — 为了让 reducers 更好的消化数据，将API返回的嵌套数据范式化</div><div class="line">redux-actions               — 在初始化 reducer 和 action 构造器时减少样板代码 (boilerplate)</div><div class="line">redux-act                   — 生成 reducer 和 action 创建函数的库</div><div class="line">redux-transducers           — Redux 的编译器工具</div><div class="line">redux-immutablejs           — 将Redux 和 Immutable 整合到一起的工具</div><div class="line">redux-tcomb                 — 在 Redux 中使用具有不可变特性、并经过类型检查的 state 和 action</div><div class="line">redux-mock-store            - 模拟 redux 来测试应用</div><div class="line">redux-actions-assertions    — Redux actions 测试断言</div><div class="line"></div><div class="line"></div><div class="line">开发者工具</div><div class="line"></div><div class="line">redux-devtools              — 一个使用时间旅行 UI 、热加载和 reducer 错误处理器的 action 日志工具，最早演示于 React Europe 会议</div><div class="line">Redux DevTools Extension    — 打包了 Redux DevTools 及附加功能的 Chrome 插件</div><div class="line"></div><div class="line"></div><div class="line">开发者工具监听器</div><div class="line"></div><div class="line">Log Monitor                 — Redux DevTools 默认监听器，提供树状视图</div><div class="line">Dock Monitor                — A resizable and movable dock for Redux DevTools monitors</div><div class="line">Slider Monitor              — Redux DevTools 自定义监听器，可回放被记录的 Redux action</div><div class="line">Inspector                   — Redux DevTools 自定义监听器，可筛选、区分 action，深入 state 并监测变化</div><div class="line">Diff Monitor                — 区分不同 action 的 store 变动的 Redux Devtools 监听器</div><div class="line">Filterable Log Monitor      — 树状可筛选视图的 Redux DevTools 监听器</div><div class="line">Chart Monitor               — Redux DevTools 图表监听器</div><div class="line">Filter Actions              — 可筛选 action 、可组合使用的 Redux DevTools 监听器</div></pre></td></tr></table></figure>
+<h4 id="Action"><a href="#Action" class="headerlink" title="Action"></a>Action</h4><p>Action 本质上是 JavaScript 普通对象，除了 type 字段外，action 对象的结构完全由你自己决定。</p>
+<h4 id="Reducer"><a href="#Reducer" class="headerlink" title="Reducer"></a>Reducer</h4><p>(previousState, action) =&gt; newState</p>
+<p>只要传入参数相同，返回计算得到的下一个 state 就一定相同。没有特殊情况、没有副作用，没有 API 请求、没有变量修改，单纯执行计算。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/01/07/react_native02/" rel="next" title="React Native笔记02">
+                <i class="fa fa-chevron-left"></i> React Native笔记02
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/01/13/小程序笔记01/" rel="prev" title="微信小程序笔记01">
+                微信小程序笔记01 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Übersicht
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="zxos" />
+          <p class="site-author-name" itemprop="name">zxos</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">13</span>
+              <span class="site-state-item-name">Artikel</span>
+            </a>
+          </div>
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装"><span class="nav-number">1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用Redux"><span class="nav-number">2.</span> <span class="nav-text">使用Redux</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Action"><span class="nav-number">3.</span> <span class="nav-text">Action</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Reducer"><span class="nav-number">4.</span> <span class="nav-text">Reducer</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">zxos</span>
+</div>
+
+<div class="powered-by">
+  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.2"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+</body>
+</html>
