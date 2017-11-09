@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Android:NDK在mac上的使用 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="NDk配置打开Default Preferences-&amp;gt;Appearance &amp;amp; Behavior-&amp;gt;System Settings-&amp;gt;Android SDK-&amp;gt;SDk Tools-&amp;gt;下载Cmake、LLDB、NDK
+
+一、创建支持C/C++的新项目
+创建新项目-&amp;gt;勾上include C++ Support-&amp;gt;C++ Standard选项:">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android:NDK在mac上的使用">
+<meta property="og:url" content="http://yoursite.com/2016/12/25/ndk01/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="NDk配置打开Default Preferences-&amp;gt;Appearance &amp;amp; Behavior-&amp;gt;System Settings-&amp;gt;Android SDK-&amp;gt;SDk Tools-&amp;gt;下载Cmake、LLDB、NDK
+
+一、创建支持C/C++的新项目
+创建新项目-&amp;gt;勾上include C++ Support-&amp;gt;C++ Standard选项:">
+<meta property="og:updated_time" content="2016-12-27T13:51:35.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android:NDK在mac上的使用">
+<meta name="twitter:description" content="NDk配置打开Default Preferences-&amp;gt;Appearance &amp;amp; Behavior-&amp;gt;System Settings-&amp;gt;Android SDK-&amp;gt;SDk Tools-&amp;gt;下载Cmake、LLDB、NDK
+
+一、创建支持C/C++的新项目
+创建新项目-&amp;gt;勾上include C++ Support-&amp;gt;C++ Standard选项:">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-ndk01" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/12/25/ndk01/" class="article-date">
+  <time datetime="2016-12-25T09:03:08.000Z" itemprop="datePublished">2016-12-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Android:NDK在mac上的使用
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="NDk配置"><a href="#NDk配置" class="headerlink" title="NDk配置"></a>NDk配置</h4><p>打开Default Preferences<br>-&gt;Appearance &amp; Behavior<br>-&gt;System Settings<br>-&gt;Android SDK<br>-&gt;SDk Tools<br>-&gt;下载Cmake、LLDB、NDK</p>
+<hr>
+<p>一、创建支持C/C++的新项目</p>
+<p>创建新项目<br>-&gt;勾上include C++ Support<br>-&gt;C++ Standard选项:     选择  C++ 标准<br>-&gt;Exceptions Support选项: 是否启用对 C++ 异常处理的支持<br>-&gt;Runtime Type Information Support选项: 是否支持支持 RTTI</p>
+<p>之后Android Studio便会自动创建支持C++的Hello模版</p>
+<hr>
+<p>二、在原有项目上支持C/C++</p>
+<p>分3步骤<br>1、创建新的原生文件</p>
+<p>-&gt;在根目录创建”CMakeLists.txt”</p>
+<p>2、创建CMake构建脚本</p>
+<p>-&gt;添加CMake命令,cmake_minimum_required()和add_library()<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line">cmake_minimum_required(VERSION 3.4.1)</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">add_library( native-lib</div><div class="line"></div><div class="line">             SHARED</div><div class="line"></div><div class="line">             src/main/cpp/native-lib.cpp )</div></pre></td></tr></table></figure></p>
+<p>add_library()指向源文件，为确保CMake可以定位头文件，需添加 include_directories()</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">add_library(...)</div><div class="line"></div><div class="line"># Specifies a path to native header files.</div><div class="line">include_directories(src/main/cpp/include/)</div></pre></td></tr></table></figure>
+<p>添加NDK API</p>
+<p>-&gt;日志库<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">find_library( # Defines the name of the path variable that stores the</div><div class="line">              # location of the NDK library.</div><div class="line">              log-lib</div><div class="line"></div><div class="line">              # Specifies the name of the NDK library that</div><div class="line">              # CMake needs to locate.</div><div class="line">              log )</div></pre></td></tr></table></figure></p>
+<p>为了确保您的原生库可以在 log 库中调用函数，您需要使用 CMake 构建脚本中的 target_link_libraries() 命令关联库：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">find_library(...)</div><div class="line"></div><div class="line"># Links your native library against one or more other native libraries.</div><div class="line">target_link_libraries( # Specifies the target library.</div><div class="line">                       native-lib</div><div class="line"></div><div class="line">                       # Links the log library to the target library.</div><div class="line">                       $&#123;log-lib&#125; )</div></pre></td></tr></table></figure></p>
+<p>为了确保您的原生库可以在 log 库中调用函数，您需要使用 CMake 构建脚本中的 target_link_libraries() 命令关联库：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">find_library(...)</div><div class="line"></div><div class="line"># Links your native library against one or more other native libraries.</div><div class="line">target_link_libraries( # Specifies the target library.</div><div class="line">                       native-lib</div><div class="line"></div><div class="line">                       # Links the log library to the target library.</div><div class="line">                       $&#123;log-lib&#125; )</div></pre></td></tr></table></figure>
+<p>以下命令可以指示 CMake 构建 android_native_app_glue.c，后者会将 NativeActivity 生命周期事件和触摸输入置于静态库中并将静态库关联到 native-lib：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">add_library( app-glue</div><div class="line">             STATIC</div><div class="line">             $&#123;ANDROID_NDK&#125;/sources/android/native_app_glue/android_native_app_glue.c )</div><div class="line"></div><div class="line"># You need to link static libraries against your shared native library.</div><div class="line">target_link_libraries( native-lib app-glue $&#123;log-lib&#125; )</div></pre></td></tr></table></figure></p>
+<p>添加其他预构建库</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">add_library( imported-lib</div><div class="line">             SHARED</div><div class="line">             IMPORTED )</div><div class="line">             </div><div class="line">set_target_properties( imported-lib</div><div class="line"></div><div class="line">                       PROPERTIES IMPORTED_LOCATION</div><div class="line"></div><div class="line">                       imported-lib/src/$&#123;ANDROID_ABI&#125;/libimported-lib.so )</div><div class="line"></div><div class="line">include_directories( imported-lib/include/ )</div><div class="line"></div><div class="line">target_link_libraries( native-lib imported-lib app-glue $&#123;log-lib&#125; )</div></pre></td></tr></table></figure>
+<p>3、让Gradle关联原生库</p>
+<p>-&gt; 先在app目录下创建CMakeLists.txt,添加cmake_minimum_required(VERSION 3.4.1)，add_library(),set_target_properties(),target_link_libraries()<br>-&gt;菜单选中 link C＋＋ support 并关联CMakeLists.txt</p>
+<hr>
+<h2 id="tag-NDK"><a href="#tag-NDK" class="headerlink" title="tag: NDK"></a>tag: NDK</h2>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/12/25/ndk01/" data-id="cj9sc7dqx00076m3x25ys5k6a" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/12/28/Angular01/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Angular笔记01
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/12/24/agera01/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">框架使用系列《一》    －Agera_01</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/01/24/android_多线程/">Android多线程</a>
+          </li>
+        
+          <li>
+            <a href="/2017/01/22/高代01/">高等代数与解析几何01</a>
+          </li>
+        
+          <li>
+            <a href="/2017/01/21/机器学习01/">机器学习笔记01</a>
+          </li>
+        
+          <li>
+            <a href="/2017/01/13/小程序笔记01/">微信小程序笔记01</a>
+          </li>
+        
+          <li>
+            <a href="/2017/01/13/Redux01/">Redux笔记01</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
