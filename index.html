@@ -1,647 +1,1396 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
+<html style="display: none;" lang="zh">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.5.0 -->
+    <script>
+        window.materialVersion = "1.5.0"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1'
+        ]
+    </script>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Title -->
+    
+    <title>
+        
+        zxos&#39; blog
+    </title>
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="theme-color" content="#0097A7">
+    <meta name="author" content="zxos">
+    <meta name="description" itemprop="description" content="">
+    <meta name="keywords" content="null">
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(key){try{localStorage.removeItem(key)}catch(e){}};lsloader.setLS=function(key,val){try{localStorage.setItem(key,val)}catch(e){}};lsloader.getLS=function(key){var val="";try{val=localStorage.getItem(key)}catch(e){val=""}return val};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var keys=[];for(var i=0;i<localStorage.length;i++){keys.push(localStorage.key(i))}keys.forEach(function(key){var data=lsloader.getLS(key);if(window.oldVersion){var remove=window.oldVersion.reduce(function(p,c){return p||data.indexOf("/*"+c+"*/")!==-1},false);if(remove){lsloader.removeLS(key)}}})}catch(e){}};lsloader.clean();lsloader.load=function(jsname,jspath,cssonload,isJs){if(typeof cssonload==="boolean"){isJs=cssonload;cssonload=undefined}isJs=isJs||false;cssonload=cssonload||function(){};var code;code=this.getLS(jsname);if(code&&code.indexOf(versionString)===-1){this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}if(code){var versionNumber=code.split(versionString)[0];if(versionNumber!=jspath){console.log("reload:"+jspath);this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}code=code.split(versionString)[1];if(isJs){this.jsRunSequence.push({name:jsname,code:code});this.runjs(jspath,jsname,code)}else{document.getElementById(jsname).appendChild(document.createTextNode(code));cssonload()}}else{this.requestResource(jsname,jspath,cssonload,isJs)}};lsloader.requestResource=function(name,path,cssonload,isJs){var that=this;if(isJs){this.iojs(path,name,function(path,name,code){that.setLS(name,path+versionString+code);that.runjs(path,name,code)})}else{this.iocss(path,name,function(code){document.getElementById(name).appendChild(document.createTextNode(code));that.setLS(name,path+versionString+code)},cssonload)}};lsloader.iojs=function(path,jsname,callback){var that=this;that.jsRunSequence.push({name:jsname,code:""});try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(path,jsname,xhr.response);return}}that.jsfallback(path,jsname)}};xhr.send(null)}catch(e){that.jsfallback(path,jsname)}};lsloader.iocss=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.iofonts=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.runjs=function(path,name,code){if(!!name&&!!code){for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code=code}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var script=document.createElement("script");script.appendChild(document.createTextNode(this.jsRunSequence[0].code));script.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(script);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var that=this;var script=document.createElement("script");script.src=this.jsRunSequence[0].path;script.type="text/javascript";this.jsRunSequence[0].status="loading";script.onload=function(){that.jsRunSequence.shift();if(that.jsRunSequence.length>0){that.runjs()}};document.body.appendChild(script)}};lsloader.tagLoad=function(path,name){this.jsRunSequence.push({name:name,code:"",path:path,status:"failed"});this.runjs()};lsloader.jsfallback=function(path,name){if(!!this.jsnamemap[name]){return}else{this.jsnamemap[name]=name}for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code="";this.jsRunSequence[k].status="failed";this.jsRunSequence[k].path=path}}this.runjs()};lsloader.cssfallback=function(path,name,cssonload){if(!!this.cssnamemap[name]){return}else{this.cssnamemap[name]=1}var link=document.createElement("link");link.type="text/css";link.href=path;link.rel="stylesheet";link.onload=link.onerror=cssonload;var root=document.getElementsByTagName("script")[0];root.parentNode.insertBefore(link,root)};lsloader.runInlineScript=function(scriptId,codeId){var code=document.getElementById(codeId).innerText;this.jsRunSequence.push({name:scriptId,code:code});this.runjs()};lsloader.loadCombo=function(jslist){var updateList="";var requestingModules={};for(var k in jslist){var LS=this.getLS(jslist[k].name);if(!!LS){var version=LS.split(versionString)[0];var code=LS.split(versionString)[1]}else{var version=""}if(version==jslist[k].path){this.jsRunSequence.push({name:jslist[k].name,code:code,path:jslist[k].path})}else{this.jsRunSequence.push({name:jslist[k].name,code:null,path:jslist[k].path,status:"comboloading"});requestingModules[jslist[k].name]=true;updateList+=(updateList==""?"":";")+jslist[k].path}}var that=this;if(!!updateList){var xhr=new XMLHttpRequest;xhr.open("get",combo+updateList,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){that.runCombo(xhr.response,requestingModules);return}}else{for(var i in that.jsRunSequence){if(requestingModules[that.jsRunSequence[i].name]){that.jsRunSequence[i].status="failed"}}that.runjs()}}};xhr.send(null)}this.runjs()};lsloader.runCombo=function(comboCode,requestingModules){comboCode=comboCode.split("/*combojs*/");comboCode.shift();for(var k in this.jsRunSequence){if(!!requestingModules[this.jsRunSequence[k].name]&&!!comboCode[0]){this.jsRunSequence[k].status="comboJS";this.jsRunSequence[k].code=comboCode[0];this.setLS(this.jsRunSequence[k].name,this.jsRunSequence[k].path+versionString+comboCode[0]);comboCode.shift()}}this.runjs()}})();</script>
+
+    <!-- Import queue -->
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
+    <link rel="icon" sizes="192x192" href="/img/favicon.png">
+    <link rel="apple-touch-icon" href="/img/favicon.png">
+
+    <!--iOS -->
+    <meta name="apple-mobile-web-app-title" content="Title">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="480">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="zxos&#39; blog">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- RSS -->
+    
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import CSS -->
+    
+        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?MKetZV3cUTfDxvMffaOezg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+        
+
+    
+
+    
+
+    <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
   
-  <title>Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://zxos.github.io/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
-  
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link rel="stylesheet" href="/css/style.css">
-  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-color: #F5F5F5;
+      }
+
+      /* blog_info bottom background */
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+        background-color: #fff;
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+<!-- Import Roboto -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
+
+<!-- Import Material Icon -->
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+
+
+    <!-- Import jQuery -->
+    
+        <script>lsloader.load("jq_js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==", true)</script>
+    
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://zxos.github.io">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="zxos&#39; blog">
+    <meta property="og:image" content="http://zxos.github.io/img/favicon.png" />
+    <meta property="og:description" content="">
+    
+
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:title" content="zxos&#39; blog">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:image" content="http://zxos.github.io/img/favicon.png">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="http://zxos.github.io" />
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="http://zxos.github.io" />
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Website",
+    "publisher": {
+        "@type": "Organization",
+        "name": "zxos&#39; blog",
+        "logo": "/img/favicon.png"
+    },
+    "url": "http://zxos.github.io",
+    "image": {
+        "@type": "ImageObject",
+        "url": "/img/favicon.png"
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://zxos.github.io"
+    },
+    "description": "null"
+}
+</script>
+
+
+
+
+    
+
+    <!-- Analytics -->
+    
+    
+    
+
+    <!-- Custom Head -->
+    
 
 </head>
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
-      
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Index Module -->
+<div class="material-index mdl-grid">
+    
+        <!-- Paradox Header -->
+        <!-- Daily pic -->
+<div class="mdl-card mdl-shadow--2dp daily-pic mdl-cell mdl-cell--8-col index-top-block">
+
+    <!-- Pic & Slogan -->
+    <div class="mdl-card__media mdl-color-text--grey-50" style="background-image:url(/img/daily_pic.png)">
+        <p class="index-top-block-slogan"><a href="#">
+        
+            
+                Hi, nice to meet you
+            
+        
+        </a></p>
     </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://zxos.github.io"></form>
-      </div>
+
+    <!-- Avatar & Name -->
+    <div class="mdl-card__supporting-text meta mdl-color-text--grey-600">
+        <!-- Author Avatar -->
+        <div id="author-avatar">
+            <img src="/img/avatar.png" width="32px" height="32px" alt="avatar">
+        </div>
+        <div>
+            <strong>zxos</strong>
+        </div>
     </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main">
-  
-    <article id="post-android_多线程" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/01/24/android_多线程/" class="article-date">
-  <time datetime="2017-01-24T09:14:24.000Z" itemprop="datePublished">2017-01-24</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/01/24/android_多线程/">Android多线程</a>
-    </h1>
-  
+</div>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="相关类、关键字、方法"><a href="#相关类、关键字、方法" class="headerlink" title="相关类、关键字、方法"></a>相关类、关键字、方法</h4><p>=== Java ===</p>
-<p>Runnable<br>Tread<br>TreadPoolExecutor<br>ScheduleExecutor</p>
-<p>Synchronized<br>Lock<br>Semaphore</p>
-<p>=== Android ===</p>
-<p>Thread<br>Handler<br>AsyncTask<br>AsyncTaskLoader</p>
-<p>=== Android方法 ===</p>
-<p>Activity.runOnUiThread(Runnable)<br>View.post(Runnable)<br>View.postDelay(Runnable, long)</p>
+        <!-- Blog info -->
+<div class="mdl-card mdl-shadow--2dp something-else mdl-cell mdl-cell--8-col mdl-cell--4-col-desktop index-top-block">
 
-      
+    <!-- Search -->
+    
+    <!-- Google -->
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable" method="post" action="">
+        <label id="search-label" class="mdl-button mdl-js-ripple-effect mdl-js-button mdl-button--fab mdl-color--accent mdl-shadow--4dp" for="search">
+            <i class="material-icons mdl-color-text--white" role="presentation">search</i>
+        </label>
+
+        <form autocomplete="off" id="search-form" method="get" action="//google.com/search" accept-charset="UTF-8" class="mdl-textfield__expandable-holder" target="_blank">
+            <input class="mdl-textfield__input search-input" type="search" name="q" id="search" placeholder="">
+            <label id="search-form-label" class="mdl-textfield__label" for="search"></label>
+
+            <input type="hidden" name="sitesearch" value="http://zxos.github.io">
+        </form>
     </div>
-    <footer class="article-footer">
-      <a data-url="http://zxos.github.io/2017/01/24/android_多线程/" data-id="cj9sc99x80005803xc40xzwdg" class="article-share-link">Partager</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
 
 
-  
-    <article id="post-高代01" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/01/22/高代01/" class="article-date">
-  <time datetime="2017-01-22T08:13:57.000Z" itemprop="datePublished">2017-01-22</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/01/22/高代01/">高等代数与解析几何01</a>
-    </h1>
-  
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div></pre></td><td class="code"><pre><div class="line">1.内积: a•b = |a||b|cos&lt;a,b&gt;</div><div class="line"></div><div class="line">2.i,j,k为a在坐标系中的基向量  a(a1,a2,a3)</div><div class="line">  </div><div class="line">  cosA = a•i/|a||i| = a1 / √(a1*a1 + a2*a2 + a3*a3)</div><div class="line">  cosB = a•j/|a||j| = a2 / √(a1*a1 + a2*a2 + a3*a3)</div><div class="line">  cosC = a•k/|a||k| = a2 / √(a1*a1 + a2*a2 + a3*a3)</div><div class="line">  </div><div class="line">  a0 = a/|a| = (cosA, cosB, cosC)</div><div class="line">  </div><div class="line">  cosA*cosA + cosB*cosB * cosC*cosC = 1</div><div class="line">  </div><div class="line">3.外积(向量积)、为向量</div><div class="line"></div><div class="line">  方向: aXb</div><div class="line"></div><div class="line">  长度: |aXb| = |a||b|sin&lt;a, b&gt;</div><div class="line"></div><div class="line"></div><div class="line">4. a与b共线</div><div class="line"></div><div class="line">  aXb ＝ 0， 特别地，aXa ＝ 0</div><div class="line">  </div><div class="line">5. 二重外积</div><div class="line"></div><div class="line">  （aXb）Xc ＝ （a•c）Xb － （b•c）Xa</div><div class="line">  </div><div class="line">6. 混合积</div><div class="line">    </div><div class="line">   (aXb)•c 可记做（a, b, c）</div><div class="line">   </div><div class="line">   (aXb)•c = |a1 b1 c1|</div><div class="line">             |a2 b2 c2| </div><div class="line">             |a3 b3 c3|</div><div class="line">             </div><div class="line">7. 拉格朗日恒等式</div><div class="line"></div><div class="line">   (aXb)•(cXd) = |a•c a•b|</div><div class="line">                 |b•c b•d|</div><div class="line">                 </div><div class="line">8. 雅可比恒等式</div><div class="line"></div><div class="line">    aX(bXc) + bX(cXa) + cX(aXb) = 0</div><div class="line">   </div><div class="line">9. 行列式</div><div class="line"></div><div class="line">   D1、 行列式关于它的一个行获列示可加的。</div><div class="line">   D2、 行列式某一行或列的公因子可以提到行列式外面。</div><div class="line">   D3、 交换行列式的两行（或两列）时，行列式要改变符号。</div><div class="line">   D4、 行列式有一行（或一列）全为0时，行列式等于0。</div><div class="line">   D5、 行列式有两行（或两列）成比例时，行列式等于0。</div><div class="line">   D6、 把行列式的某一行（或某一列）乘一个数k加到另一行（或另一列）上，行列式的值不变。</div><div class="line">   </div><div class="line">10、反称矩阵 定义</div><div class="line">            0   a12  a13</div><div class="line">    A ＝ （ -a12  0   a23 )</div><div class="line">           -a13 -a23  0</div><div class="line"> </div><div class="line"> 11、n阶范德蒙德行列式</div><div class="line">        |1          1       ...     1       |</div><div class="line">        |a1         a2      ...     an      |</div><div class="line">    D = |a1*a1      a2*a2   ...     an*an   |</div><div class="line">        |...        ...     ...     ...     |</div><div class="line">        |a1*...(n)  a2*...  ...     an*...  |</div><div class="line">    </div><div class="line">    =(a2-a1)(a3-a1)...(an-a1)</div><div class="line">            (a3-a2)...(an-a2)</div><div class="line">                    ...</div><div class="line">                    (an-a(n-1))    </div><div class="line">   </div><div class="line">12、拉普拉斯定理</div><div class="line"></div><div class="line">    在n阶方阵 A=(aij) 中任意取定k行(1 &lt;= k &lt; n),则这k行元所组成的一切k阶子式与它们自己的代数余子式的乘积之和等于|A|。</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">13、</div><div class="line">    平面一般方程</div><div class="line">    Ax + By + Cz + D = 0</div><div class="line">    </div><div class="line">    法向量v ＝ （A，B，C）    ，点P ＝ （x，y，z）</div><div class="line">    (v,p) = -D</div><div class="line">    点法式方程：</div><div class="line">    A(x - x0) + B(y - y0) + C(z - z0) = 0</div><div class="line">    </div><div class="line">    点到平面的距离：</div><div class="line">    Ax + By + Cz + D = 0</div><div class="line">    </div><div class="line">    d = |Ax1+By1+Cz1+D|/√(A² + B² + C²)</div></pre></td></tr></table></figure>
 
-      
+
+
+
+    <!-- LOGO -->
+    <div class="something-else-logo mdl-color--white mdl-color-text--grey-600">
+        <a href="#" target="_blank">
+            <img src="/img/logo.png" alt="logo" />
+        </a>
     </div>
-    <footer class="article-footer">
-      <a data-url="http://zxos.github.io/2017/01/22/高代01/" data-id="cj9sc99xk000c803xhf5xx2on" class="article-share-link">Partager</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
 
+    <!-- Infomation -->
+    <div class="mdl-card__supporting-text meta meta--fill mdl-color-text--grey-600">
+        <!-- Blog Title -->
+        <div>
+            <strong>zxos&#39; blog</strong>
+        </div>
+        <div class="section-spacer"></div>
 
-  
-    <article id="post-机器学习01" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/01/21/机器学习01/" class="article-date">
-  <time datetime="2017-01-21T13:40:23.000Z" itemprop="datePublished">2017-01-21</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/01/21/机器学习01/">机器学习笔记01</a>
-    </h1>
-  
+        <!-- Pages -->
+        <button id="show-pages-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+            <i class="material-icons" role="presentation">view_carousel</i>
+            <span class="visuallyhidden">Pages</span>
+        </button>
+        <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="show-pages-button">
+            
+        </ul>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
+        <!-- Menu -->
+        <button id="menubtn" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+            <i class="material-icons" role="presentation">more_vert</i>
+            <span class="visuallyhidden">show menu</span>
+        </button>
+        <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="menubtn">
+            
+
+            
+
+            
+                <a class="index_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=zxos&#39; blog&url=http://zxos.github.io&pic=http://zxos.github.io/img/favicon.png&searchPic=false&style=simple" target="_blank">
+                    <li class="mdl-menu__item mdl-js-ripple-effect">
+                        分享到微博
+                    </li>
+                </a>
+            
+
+            
+                <a class="index_share-link" href="https://twitter.com/intent/tweet?text=zxos&#39; blog&url=http://zxos.github.io&via=zxos" target="_blank">
+                    <li class="mdl-menu__item mdl-js-ripple-effect">
+                        分享到 Twitter
+                    </li>
+                </a>
+            
+
+            
+                <a class="index_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://zxos.github.io" target="_blank">
+                    <li class="mdl-menu__item mdl-js-ripple-effect">
+                        分享到 Facebook
+                    </li>
+                </a>
+            
+
+            
+                <a class="index_share-link" href="https://plus.google.com/share?url=http://zxos.github.io" target="_blank">
+                    <li class="mdl-menu__item mdl-js-ripple-effect">
+                        分享到 Google+
+                    </li>
+                </a>
+            
+
+            
+
+            
+
+            
+        </ul>
     </div>
-    <footer class="article-footer">
-      <a data-url="http://zxos.github.io/2017/01/21/机器学习01/" data-id="cj9sc99xi000b803xbesy4ubw" class="article-share-link">Partager</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
+</div>
 
+    
+    <div class="locate-thumbnail-symbol"></div>
 
-  
-    <article id="post-小程序笔记01" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/01/13/小程序笔记01/" class="article-date">
-  <time datetime="2017-01-13T03:59:49.000Z" itemprop="datePublished">2017-01-13</time>
-</a>
+    <!-- Pin on top -->
     
-  </div>
-  <div class="article-inner">
+
+    <!-- Normal Post -->
     
-    
-      <header class="article-header">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/01/13/小程序笔记01/">微信小程序笔记01</a>
-    </h1>
-  
-
-      </header>
+            
+                <!-- Paradox Thumbnail -->
+                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
+    <!-- Post Thumbnail -->
     
-    <div class="article-entry" itemprop="articleBody">
-      
         
-      
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+        
+    
+
+        <!-- Post Title -->
+        <p class="article-headline-p"><a href="/2017/01/24/android_多线程/">Android多线程</a></p>
     </div>
-    <footer class="article-footer">
-      <a data-url="http://zxos.github.io/2017/01/13/小程序笔记01/" data-id="cj9sc99xg0009803xqpoktwrp" class="article-share-link">Partager</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
 
-
-  
-    <article id="post-Redux01" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/01/13/Redux01/" class="article-date">
-  <time datetime="2017-01-13T03:59:16.000Z" itemprop="datePublished">2017-01-13</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/01/13/Redux01/">Redux笔记01</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">npm install --save redux</div><div class="line"></div><div class="line"></div><div class="line">npm install --save react-redux</div><div class="line">npm install --save-dev redux-devtools</div></pre></td></tr></table></figure>
-<h4 id="使用Redux"><a href="#使用Redux" class="headerlink" title="使用Redux"></a>使用Redux</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div></pre></td><td class="code"><pre><div class="line">不同框架绑定</div><div class="line"></div><div class="line">react-redux         — React</div><div class="line">ng-redux            — Angular</div><div class="line">ng2-redux           — Angular 2</div><div class="line">backbone-redux      — Backbone</div><div class="line">redux-falcor        — Falcor</div><div class="line">deku-redux          — Deku</div><div class="line"></div><div class="line"></div><div class="line">中间件</div><div class="line"></div><div class="line">redux-thunk                     — 用最简单的方式搭建异步 action 构造器</div><div class="line">redux-promise                   — 遵从 FSA 标准的 promise 中间件</div><div class="line">redux-axios-middleware          — 使用 axios HTTP 客户端获取数据的 Redux 中间件</div><div class="line">redux-observable                — Redux 的 RxJS 中间件</div><div class="line">redux-rx                        — 给 Redux 用的 RxJS 工具，包括观察变量的中间件</div><div class="line">redux-logger                    — 记录所有 Redux action 和下一次 state 的日志</div><div class="line">redux-immutable-state-invariant — 开发中的状态变更提醒</div><div class="line">redux-unhandled-action          — 开发过程中，若 Action 未使 State 发生变化则发出警告</div><div class="line">redux-analytics                 — Redux middleware 分析</div><div class="line">redux-gen                       — Redux middleware 生成器</div><div class="line">redux-saga                      — Redux 应用的另一种副作用 model</div><div class="line">redux-action-tree               — Redux 的可组合性 Cerebral-style 信号</div><div class="line">apollo-client                   — 针对 GraphQL 服务器及基于 Redux 的 UI 框架的缓存客户端</div><div class="line"></div><div class="line"></div><div class="line">路由</div><div class="line"></div><div class="line">redux-simple-router             — 保持 React Router 和 Redux 同步</div><div class="line">redux-router                    — 由 React Router 绑定到 Redux 的库</div><div class="line"></div><div class="line"></div><div class="line">组件</div><div class="line"></div><div class="line">redux-form                      — 在 Redux 中时时持有 React 表格的 state</div><div class="line">react-redux-form                — 在 React 中使用 Redux 生成表格</div><div class="line"></div><div class="line"></div><div class="line">增强器（Enhancer）</div><div class="line"></div><div class="line">redux-batched-subscribe         — 针对 store subscribers 的自定义批处理与防跳请求</div><div class="line">redux-history-transitions       — 基于独断的 action 的 history 库转换</div><div class="line">redux-optimist                  — 使 action 可稍后提交或撤销</div><div class="line">redux-optimistic-ui             — A reducer enhancer to enable type-agnostic optimistic updates 允许对未知类型进行更新的 reducer 增强器</div><div class="line">redux-undo                      — 使 reducer 便捷的重做/撤销，以及 action 记录功能</div><div class="line">redux-ignore                    — 通过数组或过滤功能忽略 redux action</div><div class="line">redux-recycle                   — 在确定的 action 上重置 redux 的 state</div><div class="line">redux-batched-actions           — 单用户通知去 dispatch 多个 action</div><div class="line">redux-search                    — 自动 index 站点资源并实现即时搜索</div><div class="line">redux-electron-store            — Store 增强器， 可同步不同 Electron 进程上的多个 Redux store</div><div class="line">redux-loop                      — Sequence effects purely and naturally by returning them from your reducers</div><div class="line">redux-side-effects              — Utilize Generators for declarative yielding of side effects from your pure reducers</div><div class="line"></div><div class="line"></div><div class="line">工具集</div><div class="line"></div><div class="line">reselect                    — 受 NuclearJS 启发，有效派生数据的选择器</div><div class="line">normalizr                   — 为了让 reducers 更好的消化数据，将API返回的嵌套数据范式化</div><div class="line">redux-actions               — 在初始化 reducer 和 action 构造器时减少样板代码 (boilerplate)</div><div class="line">redux-act                   — 生成 reducer 和 action 创建函数的库</div><div class="line">redux-transducers           — Redux 的编译器工具</div><div class="line">redux-immutablejs           — 将Redux 和 Immutable 整合到一起的工具</div><div class="line">redux-tcomb                 — 在 Redux 中使用具有不可变特性、并经过类型检查的 state 和 action</div><div class="line">redux-mock-store            - 模拟 redux 来测试应用</div><div class="line">redux-actions-assertions    — Redux actions 测试断言</div><div class="line"></div><div class="line"></div><div class="line">开发者工具</div><div class="line"></div><div class="line">redux-devtools              — 一个使用时间旅行 UI 、热加载和 reducer 错误处理器的 action 日志工具，最早演示于 React Europe 会议</div><div class="line">Redux DevTools Extension    — 打包了 Redux DevTools 及附加功能的 Chrome 插件</div><div class="line"></div><div class="line"></div><div class="line">开发者工具监听器</div><div class="line"></div><div class="line">Log Monitor                 — Redux DevTools 默认监听器，提供树状视图</div><div class="line">Dock Monitor                — A resizable and movable dock for Redux DevTools monitors</div><div class="line">Slider Monitor              — Redux DevTools 自定义监听器，可回放被记录的 Redux action</div><div class="line">Inspector                   — Redux DevTools 自定义监听器，可筛选、区分 action，深入 state 并监测变化</div><div class="line">Diff Monitor                — 区分不同 action 的 store 变动的 Redux Devtools 监听器</div><div class="line">Filterable Log Monitor      — 树状可筛选视图的 Redux DevTools 监听器</div><div class="line">Chart Monitor               — Redux DevTools 图表监听器</div><div class="line">Filter Actions              — 可筛选 action 、可组合使用的 Redux DevTools 监听器</div></pre></td></tr></table></figure>
-<h4 id="Action"><a href="#Action" class="headerlink" title="Action"></a>Action</h4><p>Action 本质上是 JavaScript 普通对象，除了 type 字段外，action 对象的结构完全由你自己决定。</p>
-<h4 id="Reducer"><a href="#Reducer" class="headerlink" title="Reducer"></a>Reducer</h4><p>(previousState, action) =&gt; newState</p>
-<p>只要传入参数相同，返回计算得到的下一个 state 就一定相同。没有特殊情况、没有副作用，没有 API 请求、没有变量修改，单纯执行计算。</p>
-
-      
+            
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2017/01/24/android_多线程/" target="_self">阅读全文</a>
+        </span>
     </div>
-    <footer class="article-footer">
-      <a data-url="http://zxos.github.io/2017/01/13/Redux01/" data-id="cj9sc99x00001803x55rege0j" class="article-share-link">Partager</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/img/avatar.png" width="44px" height="44px" alt="zxos's avatar">
+            </div>
+            <div>
+                <strong>zxos</strong>
+                <span>1月 24, 2017</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+          
 
+            
 
-  
-    <article id="post-react_native02" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/01/07/react_native02/" class="article-date">
-  <time datetime="2017-01-07T13:46:06.000Z" itemprop="datePublished">2017-01-07</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/01/07/react_native02/">React Native笔记02</a>
-    </h1>
-  
+            
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="flexbox-布局"><a href="#flexbox-布局" class="headerlink" title="flexbox 布局"></a>flexbox 布局</h4><p>==============================React 容器属性===================================</p>
-<p>dispaly<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">dispaly: flex            产生块级伸缩性容器</div><div class="line">dispaly: inline-flex     产生行内级伸缩性容器</div></pre></td></tr></table></figure></p>
-<p>flex-direction  主轴方向、默认row<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">flex-direction: row              水平</div><div class="line">flex-direction: row-reverse      水平、由右到左</div><div class="line">flex-direction: column           垂直</div><div class="line">flex-direction: column-reverse   垂直、由下到上</div></pre></td></tr></table></figure></p>
-<p>flex-wrap       空间不足时，怎么排列、默认nowrap<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">flex-wrap: nowrap        不允许换行</div><div class="line">flex-wrap: wrap          允许换行</div><div class="line">flex-wrap: wrap-reverse  允许换行，方向相反</div></pre></td></tr></table></figure></p>
-<p>flex-flow       为flex-direction和flex-wrap的缩写版本<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">flex-flow: row nowrap</div><div class="line">...</div></pre></td></tr></table></figure></p>
-<p>justify-contnet 主轴对齐方式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">justify-content: flex-start         默认、起始位置对齐</div><div class="line">justify-content: flex-end           结束位置对齐</div><div class="line">justify-content: center             中间位置对齐</div><div class="line">justify-content: space-between      平均分，第一个在起始位置、最后一个在结束位置</div><div class="line">justify-content: space-around       平均分</div></pre></td></tr></table></figure></p>
-<p>align-items     交叉轴对齐<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">align-items: flex-start             默认、交叉轴起始位置对齐</div><div class="line">align-items: flex-end               交叉轴结束位置对齐</div><div class="line">align-items: center                 交叉轴中间位置对齐</div><div class="line">align-items: baseline               基线对齐（item底部对齐）</div><div class="line">align_items: stretch                默认、交叉轴方向拉伸</div></pre></td></tr></table></figure></p>
-<p>align-content      调整换行后，交叉轴的对齐<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">align-content: flex-start           默认、交叉轴起始位置对齐</div><div class="line">align-content: flex-end             交叉轴结束位置对齐</div><div class="line">align-content: center               交叉轴中间位置对齐</div><div class="line">align-content: space-between        平均分布</div><div class="line">align-content: space-around         平均分布、且两边各有一半空间</div><div class="line">align-content: stretch              默认、在交叉轴上伸展以占用剩余空间</div></pre></td></tr></table></figure></p>
-<p>==============================React 项目属性===================================</p>
-<p>order           排列顺序、数值越小越前、默认为0<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">order: integer          （可以负数）</div></pre></td></tr></table></figure></p>
-<p>flex-grow       放大比例、默认为0不放大<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">flex-grow: number       （增加number）</div></pre></td></tr></table></figure></p>
-<p>flex-shrink     收缩能力、默认为1<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">flex－shrink: number  （缩为1/number）</div></pre></td></tr></table></figure></p>
-<p>flex-basis      剩余空间按比例伸缩<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">flex-basis: length  （具体px）</div><div class="line">flex-basis: auto</div></pre></td></tr></table></figure></p>
-<p>flex        flex-grow、flex-shrink、flex-basis的3个属性的缩写<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">flex: none      （0 0 auto）</div><div class="line">flex: flex-grow flex-shrink(可选) flex-basis(可选)      默认 0 1 auto</div></pre></td></tr></table></figure></p>
-<p>align-self      设置单独的对齐方式、会覆盖默认对齐方式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">align-self: auto</div><div class="line">align-self: flex-start</div><div class="line">align-self: flex-end</div><div class="line">align-self: center</div><div class="line">align-self: baseline</div><div class="line">align-self: stretch</div></pre></td></tr></table></figure></p>
-<p>==============================在React Native中使用flexbox======================</p>
-<p>alignItems<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">alignItems: flex-start | flex-end | center | stretch</div></pre></td></tr></table></figure></p>
-<p>alignSelf<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">alignSelf: auto | flex-start | flex-end | center | stretch</div></pre></td></tr></table></figure></p>
-<p>flex<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">flex: number</div></pre></td></tr></table></figure></p>
-<p>flexDirection<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">flexDirection: row | column</div></pre></td></tr></table></figure></p>
-<p>flexWrap<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">flexWrap: wrap | npWrap</div></pre></td></tr></table></figure></p>
-<p>justifyContent<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">justifyCOntent: flex-start | flex-end | center | space-between | space-around</div></pre></td></tr></table></figure></p>
-<h4 id="常用组件"><a href="#常用组件" class="headerlink" title="常用组件"></a>常用组件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">import &#123;</div><div class="line">  AppRegistry,</div><div class="line">  StyleSheet,</div><div class="line">  Text,</div><div class="line">  PixelRatio,       设备像素比，1/PixelRatio.get() 可以获取最小线框</div><div class="line">  View</div><div class="line">&#125; from &apos;react-native&apos;;</div></pre></td></tr></table></figure>
-<p>View</p>
-<p>Text<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">onPess</div><div class="line">numberOfLines</div><div class="line">onLayout:&#123;y:10, width:300, x:10, height:117&#125;</div></pre></td></tr></table></figure></p>
-<p>Navigator<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div></pre></td><td class="code"><pre><div class="line">initialRoute:           初始化路由</div><div class="line">&#123;</div><div class="line">name:   string</div><div class="line">index:</div><div class="line">component?: React.ComponentClass&lt;ViewProperties&gt;</div><div class="line">        id?: string</div><div class="line">        title?: string</div><div class="line">        passProps?: Object;</div><div class="line"></div><div class="line">        //anything else</div><div class="line">        [key: string]: any</div><div class="line"></div><div class="line">        //Commonly found properties</div><div class="line">        backButtonTitle?: string</div><div class="line">        content?: string</div><div class="line">        message?: string;</div><div class="line">        index?: number</div><div class="line">        onRightButtonPress?: () =&gt; void</div><div class="line">        rightButtonTitle?: string</div><div class="line">        sceneConfig?: SceneConfig</div><div class="line">        wrapperStyle?: any</div><div class="line">&#125;</div><div class="line">renderScene:    function   跳转视图</div><div class="line">configureScene  function   用来配置场景动画和手势</div><div class="line">initialRouteStack [object] 提供一个路由集合用来初始化</div><div class="line">navigationBar   node       提供一个在场景切换的时候保持的导航栏</div><div class="line">navigator       object     提供从父导航器获得的导航器对象。c</div><div class="line">sceneStyle                 将会应用在每个场景的容器上的样式。</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝</div><div class="line">导航方法</div><div class="line"></div><div class="line">var navigator = this.props.navigator</div><div class="line"></div><div class="line">getCurrentRoutes() - 获取当前栈里的路由，也就是push进来，没有pop掉的那些。</div><div class="line">jumpBack() - 跳回之前的路由，当然前提是保留现在的，还可以再跳回来，会给你保留原样。</div><div class="line">jumpForward() - 上一个方法不是调到之前的路由了么，用这个跳回来就好了。</div><div class="line">jumpTo(route) - 跳转到已有的场景并且不卸载。</div><div class="line">push(route) - 跳转到新的场景，并且将场景入栈，你可以稍后跳转过去</div><div class="line">pop() - 跳转回去并且卸载掉当前场景</div><div class="line">replace(route) - 用一个新的路由替换掉当前场景</div><div class="line">replaceAtIndex(route, index) - 替换掉指定序列的路由场景</div><div class="line">replacePrevious(route) - 替换掉之前的场景</div><div class="line">immediatelyResetRouteStack(routeStack) - 用新的路由数组来重置路由栈</div><div class="line">popToRoute(route) - pop到路由指定的场景，其他的场景将会卸载。</div><div class="line">popToTop() - pop到栈中的第一个场景，卸载掉所有的其他场景。</div></pre></td></tr></table></figure></p>
-<p>TextInput<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">autoCapitalize          当用户输入时，用于提示。可选值none、sentences、words、characters</div><div class="line">placeholder             隐式提示</div><div class="line">value                   输入的默认值</div><div class="line">placeholderTextColor    提示的文字颜色</div><div class="line">password                &quot;*&quot;密码类型</div><div class="line">multiline               多行输入</div><div class="line">editable                false时不可输入</div><div class="line">autoFocus               自动聚焦</div><div class="line">clearButtonMode         显示清除按钮，可选值never,while-editing、unless-editing、always</div><div class="line">maxLength               显示最长字符书</div><div class="line">enablesReturnKeyAutomatically       默认false，为true时没有文本时键盘是不能有返回键</div><div class="line">returnKeyType           默认为false，键盘返回键类型，default,go,google,join,next,route,search,send,yahoo,done,emergency-call</div><div class="line">secureTextEntry         默认false，为true时，像密码框一样隐藏输入内容</div><div class="line">onChangeText            输入框内容变化时回调</div><div class="line">onChange                文本变化时回调</div><div class="line">onEndEditing            编辑结束时回调</div><div class="line">onBlur                  失去焦点时回调</div><div class="line">onFocus                 获得焦点时回调</div><div class="line">onSubmitEditing         结束编辑后，点击提交按钮触发</div></pre></td></tr></table></figure></p>
-<p>Touchable</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">TouchableHighlight  高亮触摸</div><div class="line">TouchableOpacity    透明触摸</div><div class="line">TouchableWithoutFeedback 无反馈触摸</div><div class="line"></div><div class="line"></div><div class="line">TouchableHighlight</div><div class="line">activeOpacity   触摸时透明度设置</div><div class="line">onHideUnderlay  隐藏背景阴影时触发事件</div><div class="line">onShowUnderlay  出现背景阴影时触发事件</div><div class="line">underlayColor   点击时背景阴影效果的背景颜色</div><div class="line"></div><div class="line">TouchableOpacity</div><div class="line">activeOpacity</div><div class="line"></div><div class="line">TouchableWithoutFeedback</div><div class="line">onLongPress     长按事件</div><div class="line">onPressIn       触摸进入事件</div><div class="line">onPressOut      触摸释放事件</div></pre></td></tr></table></figure>
-<p>Image</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">resizeMode          适应模式，cover、contain、stretch</div><div class="line">source              &#123;uri: string&#125;、&#123;require(&apos;image!name&apos;)&#125;</div><div class="line">defaultSource       ios支持属性</div><div class="line">onLoad              ios支持属性</div><div class="line">onLoadEnd           ios支持属性</div><div class="line">onLoadStart         ios支持属性</div><div class="line">onProgress          ios支持属性</div></pre></td></tr></table></figure>
-<p>TarBarIOS</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">barTintColor        背景颜色</div><div class="line">tintCOlor           选中颜色</div><div class="line">translucent         是否透明</div></pre></td></tr></table></figure>
-<p>WebView</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">automaticallyAdjustCOntentInsets        是否自动调整内部内容</div><div class="line">bounces                     内容拉到地步或者头部是否回弹</div><div class="line">contentInset                内部内容偏移值</div><div class="line">html                        html字符串</div><div class="line">injectedJavaScript          注入的js代码</div><div class="line">onNavigationStateChange     监听导航状态变化的函数</div><div class="line">renderError                 监听渲染页面出错的函数</div><div class="line">startInLoadingState         是否开启页面加载的状态</div><div class="line">renderLoading               webview渲染时触发</div><div class="line">scrollEnabled               是否能滚动</div><div class="line">onNavigationStateChange     页面导航状态改变时触发</div><div class="line">scalepageToFit              按照页面比例和内容宽高内容自动缩放内容</div></pre></td></tr></table></figure>
-<p>==============================常用API =========================================</p>
-<h4 id="常用api"><a href="#常用api" class="headerlink" title="常用api"></a>常用api</h4><p>AppRegistry</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">registerConfig(config: Array&lt;AppConfig&gt;)                                    静态方法,注册配置</div><div class="line">registerComponent(appKey: string, getComponentFunc: ComponentProvider)      注册入口组件</div><div class="line">registerRunnable(appKey: string, func: Function)                            注册函数监听</div><div class="line">getAppKeys()                                                                获取registerRunnable注册的监听键</div><div class="line">runApplication(appKey: string, appParameters: any)                          运行App</div></pre></td></tr></table></figure>
-<p>AsyncStorage<br>全局、异步、键值对</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure>
-<p>==============================项目属性=========================================</p>
-<p>==============================项目属性=========================================</p>
-<p>==============================项目属性=========================================</p>
-<p>==============================项目属性=========================================</p>
-<p>==============================项目属性=========================================</p>
-
-      
+            <!-- Post Views -->
+            <span class="post_entry-views">
+            </span>
+        </div>
     </div>
-    <footer class="article-footer">
-      <a data-url="http://zxos.github.io/2017/01/07/react_native02/" data-id="cj9sc99xh000a803xc11omg5h" class="article-share-link">Partager</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
+</div>
 
-
-  
-    <article id="post-ES6_01" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/01/06/ES6_01/" class="article-date">
-  <time datetime="2017-01-06T12:59:16.000Z" itemprop="datePublished">2017-01-06</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+            
+            
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/01/06/ES6_01/">ES6笔记01</a>
-    </h1>
-  
-
-      </header>
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="let"><a href="#let" class="headerlink" title="let"></a>let</h4><p>所声明的变量，只在let命令所在的代码块内有效。</p>
-<h4 id="const"><a href="#const" class="headerlink" title="const"></a>const</h4><p>const声明一个只读的常量。一旦声明，常量的值就不能改变。<br>只在声明所在的块级作用域内有效。</p>
-<p>对于复合类型的变量，变量名不指向数据，而是指向数据所在的地址。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">const foo = &#123;&#125;;</div><div class="line">foo.prop = 123;</div><div class="line"></div><div class="line">foo.prop</div><div class="line">// 123</div><div class="line"></div><div class="line">foo = &#123;&#125;; // TypeError: &quot;foo&quot; is read-only</div><div class="line"></div><div class="line">===============</div><div class="line">const a = [];</div><div class="line">a.push(&apos;Hello&apos;); // 可执行</div><div class="line">a.length = 0;    // 可执行</div><div class="line">a = [&apos;Dave&apos;];    // 报错</div></pre></td></tr></table></figure></p>
-<p>输入模块的指定方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">const &#123; SourceMapConsumer, SourceNode &#125; = require(&quot;source-map&quot;);</div></pre></td></tr></table></figure></p>
+        
+            
+                <!-- Paradox Thumbnail -->
+                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
+    <!-- Post Thumbnail -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+        
+    
 
-      
+        <!-- Post Title -->
+        <p class="article-headline-p"><a href="/2017/01/22/高代01/">高等代数与解析几何01</a></p>
     </div>
-    <footer class="article-footer">
-      <a data-url="http://zxos.github.io/2017/01/06/ES6_01/" data-id="cj9sc99x30002803xhhwkkmxg" class="article-share-link">Partager</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
 
-
-  
-    <article id="post-react_native01" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/01/06/react_native01/" class="article-date">
-  <time datetime="2017-01-06T12:58:05.000Z" itemprop="datePublished">2017-01-06</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/01/06/react_native01/">React Native笔记01</a>
-    </h1>
-  
+            
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2017/01/22/高代01/" target="_self">阅读全文</a>
+        </span>
+    </div>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/img/avatar.png" width="44px" height="44px" alt="zxos's avatar">
+            </div>
+            <div>
+                <strong>zxos</strong>
+                <span>1月 22, 2017</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+          
 
-      </header>
+            
+
+            
+
+            <!-- Post Views -->
+            <span class="post_entry-views">
+            </span>
+        </div>
+    </div>
+</div>
+
+            
+            
+        
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="常用组件"><a href="#常用组件" class="headerlink" title="常用组件"></a>常用组件</h4><p>文本输入     TextInput<br>导航        Navigator</p>
-<p>View<br>Text<br>ScrollView<br>Image<br>ListView<br>TouchableHighlight<br>TouchableNativeFeedback<br>TouchableOpacity<br>TouchableWithoutFeedback<br>ViewPagerAndroid</p>
-<h4 id="常用引入包"><a href="#常用引入包" class="headerlink" title="常用引入包"></a>常用引入包</h4><p>Redux来统一管理数据流</p>
-<p>网络库     frisbee、axios<br>防止定时器clear时出bug    react-timer-mixin  （ES5）<br>持久数据    Immutable<br>reselect</p>
-<h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><p>python2<br>npm              包管理<br>node             环境<br>react-native-cli 脚手架<br>Nuclide          FaceBook的IDE</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">npm 替换淘宝镜像源</div><div class="line"></div><div class="line">1.通过config命令</div><div class="line"></div><div class="line">npm config set registry https://registry.npm.taobao.org </div><div class="line">npm info underscore （如果上面配置正确这个命令会有字符串response）</div><div class="line">2.命令行指定</div><div class="line"></div><div class="line">npm --registry https://registry.npm.taobao.org info underscore </div><div class="line">3.编辑 ~/.npmrc 加入下面内容</div><div class="line"></div><div class="line">registry = https://registry.npm.taobao.org</div></pre></td></tr></table></figure>
-<h4 id="自定义组件"><a href="#自定义组件" class="headerlink" title="自定义组件"></a>自定义组件</h4><p>Component   </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">函数 render()、construtor(props)</div><div class="line"></div><div class="line"></div><div class="line">class Greeting extends Component &#123;</div><div class="line">  render() &#123;</div><div class="line">    return (</div><div class="line">      &lt;Text&gt;Hello &#123;this.props.name&#125;!&lt;/Text&gt;</div><div class="line">    );</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">===========</div><div class="line">&lt;Greeting name=&apos;文字&apos;/&gt;</div></pre></td></tr></table></figure>
-<h4 id="弹性Flex-宽高"><a href="#弹性Flex-宽高" class="headerlink" title="弹性Flex 宽高"></a>弹性Flex 宽高</h4><p>flex可以使其在可利用的空间中动态地扩张或收缩<br>flex:1来指定某个组件扩张以撑满所有剩余的空间</p>
-<h4 id="使用Flexbox布局"><a href="#使用Flexbox布局" class="headerlink" title="使用Flexbox布局"></a>使用Flexbox布局</h4><p>flexDirection 指定主体方向、容器属性<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">flexDirection: &apos;row&apos; 水平 、默认竖直 column</div></pre></td></tr></table></figure></p>
-<p>justifyContent 指定子元素排列方式、容器属性<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">flex-start、center、flex-end、space-around以及space-between</div></pre></td></tr></table></figure></p>
-<p>alignItems 子元素沿着次轴方向、容器属性<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">flex-start、center、flex-end以及stretch</div></pre></td></tr></table></figure></p>
-<h4 id="处理文本输入"><a href="#处理文本输入" class="headerlink" title="处理文本输入"></a>处理文本输入</h4><p>基础组件 TextInput</p>
-<p>属性     onChangeText         接受一个函数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">onChangeText=&#123;(text) =&gt; this.setState(&#123;text&#125;)&#125;</div></pre></td></tr></table></figure></p>
-<p>属性     onSubmitEditing      会在文本被提交后（用户按下软键盘上的提交键）调用。</p>
-<h4 id="ScrollView"><a href="#ScrollView" class="headerlink" title="ScrollView"></a>ScrollView</h4><p>默认垂直。 水平horizontal</p>
-<h4 id="ListView"><a href="#ListView" class="headerlink" title="ListView"></a>ListView</h4><p>ListView组件必须的两个属性是dataSource和renderRow.<br>dataSource是列表的数据源<br>renderRow则逐个解析数据源中的数据</p>
-<p>rowHasChanged函数也是ListView的必需属性、判断某行数据是否变化了。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"> constructor(props) &#123;</div><div class="line">    super(props);</div><div class="line">    const ds = new ListView.DataSource(&#123;rowHasChanged: (r1, r2) =&gt; r1 !== r2&#125;);</div><div class="line">    this.state = &#123;</div><div class="line">      dataSource: ds.cloneWithRows([</div><div class="line">        &apos;John&apos;, &apos;Joel&apos;, &apos;James&apos;, &apos;Jimmy&apos;, &apos;Jackson&apos;, &apos;Jillian&apos;, &apos;Julie&apos;, &apos;Devin&apos;</div><div class="line">      ])</div><div class="line">    &#125;;</div><div class="line">  &#125;</div><div class="line"></div><div class="line"></div><div class="line">============</div><div class="line"> &lt;View style=&#123;&#123;flex: 1, paddingTop: 22&#125;&#125;&gt;</div><div class="line">    &lt;ListView</div><div class="line">      dataSource=&#123;this.state.dataSource&#125;</div><div class="line">      renderRow=&#123;(rowData) =&gt; &lt;Text&gt;&#123;rowData&#125;&lt;/Text&gt;&#125;</div><div class="line">    /&gt;</div><div class="line">  &lt;/View&gt;</div></pre></td></tr></table></figure>
-<h4 id="网络"><a href="#网络" class="headerlink" title="网络"></a>网络</h4><p>react－native 内置了XMLHttpRequest API</p>
-<p>支持 WebSocket</p>
-<p>使用Fetch<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">请求、 Fetch 方法会返回一个Promise</div><div class="line"></div><div class="line">fetch(&apos;https://mywebsite.com/endpoint/&apos;, &#123;</div><div class="line">  method: &apos;POST&apos;,</div><div class="line">  headers: &#123;</div><div class="line">    &apos;Accept&apos;: &apos;application/json&apos;,</div><div class="line">    &apos;Content-Type&apos;: &apos;application/json&apos;,</div><div class="line">  &#125;,</div><div class="line">  body: JSON.stringify(&#123;</div><div class="line">    firstParam: &apos;yourValue&apos;,</div><div class="line">    secondParam: &apos;yourOtherValue&apos;,</div><div class="line">  &#125;)</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
-<p>处理服务器的响应数据</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">getMoviesFromApiAsync() &#123;</div><div class="line">return fetch(&apos;http://facebook.github.io/react-native/movies.json&apos;)</div><div class="line">.then((response) =&gt; response.json())</div><div class="line">.then((responseJson) =&gt; &#123;</div><div class="line">return responseJson.movies;</div><div class="line">&#125;)</div><div class="line">.catch((error) =&gt; &#123;</div><div class="line">console.error(error);</div><div class="line">&#125;);</div><div class="line">&#125;</div><div class="line">  </div><div class="line">=============ES7</div><div class="line">// 注意这个方法前面有async关键字</div><div class="line">  async getMoviesFromApi() &#123;</div><div class="line">    try &#123;</div><div class="line">      // 注意这里的await语句，其所在的函数必须有async关键字声明</div><div class="line">      let response = await fetch(&apos;http://facebook.github.io/react-native/movies.json&apos;);</div><div class="line">      let responseJson = await response.json();</div><div class="line">      return responseJson.movies;</div><div class="line">    &#125; catch(error) &#123;</div><div class="line">      console.error(error);</div><div class="line">    &#125;</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
-<p>WebSocket支持</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">var ws = new WebSocket(&apos;ws://host.com/path&apos;);</div><div class="line"></div><div class="line">ws.onopen = () =&gt; &#123;</div><div class="line">  // 打开一个连接</div><div class="line"></div><div class="line">  ws.send(&apos;something&apos;); // 发送一个消息</div><div class="line">&#125;;</div><div class="line"></div><div class="line">ws.onmessage = (e) =&gt; &#123;</div><div class="line">  // 接收到了一个消息</div><div class="line">  console.log(e.data);</div><div class="line">&#125;;</div><div class="line"></div><div class="line">ws.onerror = (e) =&gt; &#123;</div><div class="line">  // 发生了一个错误</div><div class="line">  console.log(e.message);</div><div class="line">&#125;;</div><div class="line"></div><div class="line">ws.onclose = (e) =&gt; &#123;</div><div class="line">  // 连接被关闭了</div><div class="line">  console.log(e.code, e.reason);</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<h4 id="Navigator"><a href="#Navigator" class="headerlink" title="Navigator"></a>Navigator</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line">import React, &#123; Component &#125; from &apos;react&apos;;</div><div class="line">import &#123; AppRegistry, Navigator, Text, View &#125; from &apos;react-native&apos;;</div><div class="line"></div><div class="line">import MyScene from &apos;./MyScene&apos;;</div><div class="line"></div><div class="line">class SimpleNavigationApp extends Component &#123;</div><div class="line">  render() &#123;</div><div class="line">    return (</div><div class="line">      &lt;Navigator</div><div class="line">        initialRoute=&#123;&#123; title: &apos;My Initial Scene&apos;, index: 0 &#125;&#125;</div><div class="line">        renderScene=&#123;(route, navigator) =&gt;</div><div class="line">          &lt;MyScene</div><div class="line">            title=&#123;route.title&#125;</div><div class="line"></div><div class="line">            // Function to call when a new scene should be displayed           </div><div class="line">            onForward=&#123; () =&gt; &#123;    </div><div class="line">              const nextIndex = route.index + 1;</div><div class="line">              navigator.push(&#123;</div><div class="line">                title: &apos;Scene &apos; + nextIndex,</div><div class="line">                index: nextIndex,</div><div class="line">              &#125;);</div><div class="line">            &#125;&#125;</div><div class="line"></div><div class="line">            // Function to call to go back to the previous scene</div><div class="line">            onBack=&#123;() =&gt; &#123;</div><div class="line">              if (route.index &gt; 0) &#123;</div><div class="line">                navigator.pop();</div><div class="line">              &#125;</div><div class="line">            &#125;&#125;</div><div class="line">          /&gt;</div><div class="line">        &#125;</div><div class="line">      /&gt;</div><div class="line">    )</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">AppRegistry.registerComponent(&apos;SimpleNavigationApp&apos;, () =&gt; SimpleNavigationApp);</div><div class="line">AppRegistry.registerComponent(&apos;SimpleNavigationApp&apos;, () =&gt; SimpleNavigationApp);</div></pre></td></tr></table></figure>
-<p>跳转<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">navigator.push(&#123;</div><div class="line">  title: &apos;Next Scene&apos;,</div><div class="line">  index: 1,</div><div class="line">&#125;);</div><div class="line"></div><div class="line">navigator.pop();</div></pre></td></tr></table></figure></p>
-<h4 id="颜色格式支持"><a href="#颜色格式支持" class="headerlink" title="颜色格式支持"></a>颜色格式支持</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&apos;#f0f&apos; (#rgb)</div><div class="line">&apos;#f0fc&apos; (#rgba)</div><div class="line">&apos;#ff00ff&apos; (#rrggbb)</div><div class="line">&apos;#ff00ff00&apos; (#rrggbbaa)</div><div class="line">&apos;rgb(255, 255, 255)&apos;</div><div class="line">&apos;rgba(255, 255, 255, 1.0)&apos;</div><div class="line">&apos;hsl(360, 100%, 100%)&apos;</div><div class="line">&apos;hsla(360, 100%, 100%, 1.0)&apos;</div><div class="line">&apos;transparent&apos;</div><div class="line">&apos;red&apos;</div><div class="line">0xff00ff00 (0xrrggbbaa)</div></pre></td></tr></table></figure>
-<h4 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h4><p>静态图片资源</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;Image source=&#123;require(&apos;./my-icon.png&apos;)&#125; /&gt;</div><div class="line"></div><div class="line"></div><div class="line">Packager就会去这个组件所在的文件夹下查找my-icon.png。并且，如果你有my-icon.ios.png和my-icon.android.png，Packager就会根据平台而选择不同的文件。</div><div class="line"></div><div class="line">你还可以使用@2x，@3x这样的文件名后缀，来为不同的屏幕精度提供图片。</div></pre></td></tr></table></figure>
-<p>使用混合App的图片资源</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;Image source=&#123;&#123;uri: &apos;app_icon&apos;&#125;&#125; style=&#123;&#123;width: 40, height: 40&#125;&#125; /&gt;</div></pre></td></tr></table></figure>
-<p>网络图片</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;Image source=&#123;&#123;uri: &apos;https://facebook.github.io/react/img/logo_og.png&apos;&#125;&#125; style=&#123;&#123;width: 400, height: 400&#125;&#125; /&gt;</div></pre></td></tr></table></figure>
-<p>本地文件系统中的图片</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">详情见，Images.xcassets</div><div class="line"></div><div class="line">require(&apos;image!logo&apos;)</div></pre></td></tr></table></figure>
-<p>资源属性是一个对象Object<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;Image source=&#123;&#123;uri: &apos;something.jpg&apos;&#125;&#125; /&gt;</div><div class="line"></div><div class="line"></div><div class="line">裁剪</div><div class="line">&#123;uri: ..., crop: &#123;left: 10, top: 50, width: 20, height: 40&#125;&#125;ß</div></pre></td></tr></table></figure></p>
-<p>实现背景<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">return (</div><div class="line">  &lt;Image source=&#123;...&#125;&gt;</div><div class="line">    &lt;Text&gt;Inside&lt;/Text&gt;</div><div class="line">  &lt;/Image&gt;</div><div class="line">);</div></pre></td></tr></table></figure></p>
-<p>圆角<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">iOS暂不支持</div><div class="line"></div><div class="line"></div><div class="line">borderTopLeftRadius</div><div class="line">borderTopRightRadius</div><div class="line">borderBottomLeftRadius</div><div class="line">borderBottomRightRadius</div></pre></td></tr></table></figure></p>
-<h4 id="处理触摸事件"><a href="#处理触摸事件" class="headerlink" title="处理触摸事件"></a>处理触摸事件</h4><p>可点击控件，Touchable开头</p>
-<ul>
-<li>TouchableHighlight来制作按钮或者链接</li>
-<li>Android上还可以使用TouchableNativeFeedback,类似墨水涟漪的视觉效果</li>
-<li>TouchableOpacity会在用户手指按下时降低按钮的透明度，而不会改变背景的颜色。</li>
-<li>TouchableWithoutFeedback, 不显示任何视觉反馈。</li>
+        
+            
+                <!-- Paradox Thumbnail -->
+                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
+    <!-- Post Thumbnail -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+        
+    
+
+        <!-- Post Title -->
+        <p class="article-headline-p"><a href="/2017/01/21/机器学习01/">机器学习笔记01</a></p>
+    </div>
+
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2017/01/21/机器学习01/" target="_self">阅读全文</a>
+        </span>
+    </div>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/img/avatar.png" width="44px" height="44px" alt="zxos's avatar">
+            </div>
+            <div>
+                <strong>zxos</strong>
+                <span>1月 21, 2017</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+          
+
+            
+
+            
+
+            <!-- Post Views -->
+            <span class="post_entry-views">
+            </span>
+        </div>
+    </div>
+</div>
+
+            
+            
+        
+    
+        
+            
+                <!-- Paradox Thumbnail -->
+                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
+    <!-- Post Thumbnail -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+        
+    
+
+        <!-- Post Title -->
+        <p class="article-headline-p"><a href="/2017/01/13/小程序笔记01/">微信小程序笔记01</a></p>
+    </div>
+
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2017/01/13/小程序笔记01/" target="_self">阅读全文</a>
+        </span>
+    </div>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/img/avatar.png" width="44px" height="44px" alt="zxos's avatar">
+            </div>
+            <div>
+                <strong>zxos</strong>
+                <span>1月 13, 2017</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+          
+
+            
+
+            
+
+            <!-- Post Views -->
+            <span class="post_entry-views">
+            </span>
+        </div>
+    </div>
+</div>
+
+            
+            
+        
+    
+        
+            
+                <!-- Paradox Thumbnail -->
+                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
+    <!-- Post Thumbnail -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+        
+    
+
+        <!-- Post Title -->
+        <p class="article-headline-p"><a href="/2017/01/13/Redux01/">Redux笔记01</a></p>
+    </div>
+
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            安装
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2017/01/13/Redux01/" target="_self">阅读全文</a>
+        </span>
+    </div>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/img/avatar.png" width="44px" height="44px" alt="zxos's avatar">
+            </div>
+            <div>
+                <strong>zxos</strong>
+                <span>1月 13, 2017</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+          
+
+            
+
+            
+
+            <!-- Post Views -->
+            <span class="post_entry-views">
+            </span>
+        </div>
+    </div>
+</div>
+
+            
+            
+        
+    
+        
+            
+                <!-- Paradox Thumbnail -->
+                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
+    <!-- Post Thumbnail -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+        
+    
+
+        <!-- Post Title -->
+        <p class="article-headline-p"><a href="/2017/01/07/react_native02/">React Native笔记02</a></p>
+    </div>
+
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2017/01/07/react_native02/" target="_self">阅读全文</a>
+        </span>
+    </div>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/img/avatar.png" width="44px" height="44px" alt="zxos's avatar">
+            </div>
+            <div>
+                <strong>zxos</strong>
+                <span>1月 07, 2017</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+          
+
+            
+
+            
+
+            <!-- Post Views -->
+            <span class="post_entry-views">
+            </span>
+        </div>
+    </div>
+</div>
+
+            
+            
+        
+    
+        
+            
+                <!-- Paradox Thumbnail -->
+                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
+    <!-- Post Thumbnail -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+        
+    
+
+        <!-- Post Title -->
+        <p class="article-headline-p"><a href="/2017/01/06/ES6_01/">ES6笔记01</a></p>
+    </div>
+
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            let所声明...
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2017/01/06/ES6_01/" target="_self">阅读全文</a>
+        </span>
+    </div>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/img/avatar.png" width="44px" height="44px" alt="zxos's avatar">
+            </div>
+            <div>
+                <strong>zxos</strong>
+                <span>1月 06, 2017</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+          
+
+            
+
+            
+
+            <!-- Post Views -->
+            <span class="post_entry-views">
+            </span>
+        </div>
+    </div>
+</div>
+
+            
+            
+        
+    
+        
+            
+                <!-- Paradox Thumbnail -->
+                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
+    <!-- Post Thumbnail -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+        
+    
+
+        <!-- Post Title -->
+        <p class="article-headline-p"><a href="/2017/01/06/react_native01/">React Native笔记01</a></p>
+    </div>
+
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            常用组件
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2017/01/06/react_native01/" target="_self">阅读全文</a>
+        </span>
+    </div>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/img/avatar.png" width="44px" height="44px" alt="zxos's avatar">
+            </div>
+            <div>
+                <strong>zxos</strong>
+                <span>1月 06, 2017</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+          
+
+            
+
+            
+
+            <!-- Post Views -->
+            <span class="post_entry-views">
+            </span>
+        </div>
+    </div>
+</div>
+
+            
+            
+        
+    
+        
+            
+                <!-- Paradox Thumbnail -->
+                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
+    <!-- Post Thumbnail -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+        
+    
+
+        <!-- Post Title -->
+        <p class="article-headline-p"><a href="/2017/01/05/TensorFlow笔记01/">TensorFlow笔记</a></p>
+    </div>
+
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2017/01/05/TensorFlow笔记01/" target="_self">阅读全文</a>
+        </span>
+    </div>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/img/avatar.png" width="44px" height="44px" alt="zxos's avatar">
+            </div>
+            <div>
+                <strong>zxos</strong>
+                <span>1月 05, 2017</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+          
+
+            
+
+            
+
+            <!-- Post Views -->
+            <span class="post_entry-views">
+            </span>
+        </div>
+    </div>
+</div>
+
+            
+            
+        
+    
+        
+            
+                <!-- Paradox Thumbnail -->
+                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
+    <!-- Post Thumbnail -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+        
+    
+
+        <!-- Post Title -->
+        <p class="article-headline-p"><a href="/2016/12/29/android_design01/">Android的design兼容包</a></p>
+    </div>
+
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2016/12/29/android_design01/" target="_self">阅读全文</a>
+        </span>
+    </div>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/img/avatar.png" width="44px" height="44px" alt="zxos's avatar">
+            </div>
+            <div>
+                <strong>zxos</strong>
+                <span>12月 29, 2016</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+          
+
+            
+
+            
+
+            <!-- Post Views -->
+            <span class="post_entry-views">
+            </span>
+        </div>
+    </div>
+</div>
+
+            
+            
+        
+    
+
+    
+    <!-- Index nav -->
+        <nav class="material-nav mdl-cell mdl-cell--12-col">
+            <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"><i class="material-icons" role="presentation">arrow_forward</i></button></a>
+        </nav>
+    
+
+    
+        <script type="text/ls-javascript" id="thumbnail-script">
+    var randomNum;
+
+    var locatePost = $('.locate-thumbnail-symbol').next();
+    for(var i = 0; i < 10; i++) {
+        randomNum = Math.floor(Math.random() * 19 + 1);
+
+        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
+        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+
+        locatePost = locatePost.next();
+    }
+</script>
+
+    
+</div>
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar.png" alt="zxos's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        youremail@email.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="#" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2017/01/">一月 2017<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/12/">十二月 2016<span class="sidebar_archives-count">4</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+
+    <!-- Pages  -->
+    
+
+    <!-- Article Number  -->
+    
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">class MyButton extends Component &#123;</div><div class="line">  _onPressButton() &#123;</div><div class="line">    console.log(&quot;You tapped the button!&quot;);</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  render() &#123;</div><div class="line">    return (</div><div class="line">      &lt;TouchableHighlight onPress=&#123;this._onPressButton&#125;&gt;</div><div class="line">        &lt;Text&gt;Button&lt;/Text&gt;</div><div class="line">      &lt;/TouchableHighlight&gt;</div><div class="line">    );</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>长按 </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">onLongPress属性</div></pre></td></tr></table></figure>
-<p>在列表中上下滑动和在视图上左右滑动 </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ScrollView可以在垂直或水平方向滚动，还可以配置pagingEnabled属性来让用户整屏整屏的滑动。此外，水平方向的滑动还可以使用Android上的ViewPagerAndroid 组件。</div></pre></td></tr></table></figure>
-<p>双指缩放</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">在ScrollView中只放置一个组件，设置maximumZoomScale和minimumZoomScale</div></pre></td></tr></table></figure>
-<h4 id="动画"><a href="#动画" class="headerlink" title="动画"></a>动画</h4><p>Animated</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div></pre></td><td class="code"><pre><div class="line">class Playground extends React.Component &#123;</div><div class="line">  constructor(props: any) &#123;</div><div class="line">    super(props);</div><div class="line">    this.state = &#123;</div><div class="line">      bounceValue: new Animated.Value(0),</div><div class="line">    &#125;;</div><div class="line">  &#125;</div><div class="line">  render(): ReactElement &#123;</div><div class="line">    return (</div><div class="line">      &lt;Animated.Image                         // 可选的基本组件类型: Image, Text, View</div><div class="line">        source=&#123;&#123;uri: &apos;http://i.imgur.com/XMKOH81.jpg&apos;&#125;&#125;</div><div class="line">        style=&#123;&#123;</div><div class="line">          flex: 1,</div><div class="line">          transform: [                        // `transform`是一个有序数组（动画按顺序执行）</div><div class="line">            &#123;scale: this.state.bounceValue&#125;,  // 将`bounceValue`赋值给 `scale`</div><div class="line">          ]</div><div class="line">        &#125;&#125;</div><div class="line">      /&gt;</div><div class="line">    );</div><div class="line">  &#125;</div><div class="line">  componentDidMount() &#123;</div><div class="line">    this.state.bounceValue.setValue(1.5);     // 设置一个较大的初始值</div><div class="line">    Animated.spring(                          // 可选的基本动画类型: spring, decay, timing</div><div class="line">      this.state.bounceValue,                 // 将`bounceValue`值动画化</div><div class="line">      &#123;</div><div class="line">        toValue: 0.8,                         // 将其值以动画的形式改到一个较小值</div><div class="line">        friction: 1,                          // Bouncier spring</div><div class="line">      &#125;</div><div class="line">    ).start();                                // 开始执行动画</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">spring: 基础的单次弹跳物理模型，符合Origami设计标准</div><div class="line">        friction: 摩擦力，默认为7.</div><div class="line">        tension: 张力，默认40。</div><div class="line">decay: 以一个初始速度开始并且逐渐减慢停止。</div><div class="line">        velocity: 起始速度，必填参数。</div><div class="line">        deceleration: 速度衰减比例，默认为0.997。</div><div class="line">timing: 从时间范围映射到渐变的值。</div><div class="line">        duration: 动画持续的时间（单位是毫秒），默认为500。</div><div class="line">        easing：一个用于定义曲线的渐变函数。阅读Easing模块可以找到许多预定义的函数。iOS默认为Easing.inOut(Easing.ease)。</div><div class="line">        delay: 在一段时间之后开始动画（单位是毫秒），默认为0。</div></pre></td></tr></table></figure>
-<p>组合动画</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">parallel（同时执行）、sequence（顺序执行）、stagger和delay来组合使用。</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">Animated.sequence([            // 首先执行decay动画，结束后同时执行spring和twirl动画</div><div class="line">  Animated.decay(position, &#123;   // 滑行一段距离后停止</div><div class="line">    velocity: &#123;x: gestureState.vx, y: gestureState.vy&#125;, // 根据用户的手势设置速度</div><div class="line">    deceleration: 0.997,</div><div class="line">  &#125;),</div><div class="line">  Animated.parallel([          // 在decay之后并行执行：</div><div class="line">    Animated.spring(position, &#123;</div><div class="line">      toValue: &#123;x: 0, y: 0&#125;    // 返回到起始点开始</div><div class="line">    &#125;),</div><div class="line">    Animated.timing(twirl, &#123;   // 同时开始旋转</div><div class="line">      toValue: 360,</div><div class="line">    &#125;),</div><div class="line">  ]),</div><div class="line">]).start();                    // 执行这一整套动画序列</div></pre></td></tr></table></figure>
-<p>插值 interpolate</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">value.interpolate(&#123;</div><div class="line">  inputRange: [0, 1],</div><div class="line">  outputRange: [0, 100],</div><div class="line">&#125;);</div><div class="line"></div><div class="line"></div><div class="line">支持多区间定义</div><div class="line">value.interpolate(&#123;</div><div class="line">  inputRange: [-300, -100, 0, 100, 101],</div><div class="line">  outputRange: [300,    0, 1,   0,   0],</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<p>跟踪动态值</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">Animated.spring(follower, &#123;toValue: leader&#125;).start();</div><div class="line">Animated.timing(opacity, &#123;</div><div class="line">  toValue: pan.x.interpolate(&#123;</div><div class="line">    inputRange: [0, 300],</div><div class="line">    outputRange: [1, 0],</div><div class="line">  &#125;),</div><div class="line">&#125;).start();</div></pre></td></tr></table></figure>
-<p>LayoutAnimation 允许你在全局范围内创建和更新动画</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">如果要在Android上使用LayoutAnimation，那么目前还需要在UIManager中启用：</div><div class="line"></div><div class="line">UIManager.setLayoutAnimationEnabledExperimental &amp;&amp; UIManager.setLayoutAnimationEnabledExperimental(true);</div></pre></td></tr></table></figure>
-<p>setNativeProps 方法可以使我们直接修改基于原生视图的组件的属性，而不需要使用setState来重新渲染整个组件树。</p>
-<h4 id="定时器"><a href="#定时器" class="headerlink" title="定时器"></a>定时器</h4><p>setTimeout, clearTimeout<br>setInterval, clearInterval<br>setImmediate, clearImmediate<br>requestAnimationFrame, cancelAnimationFrame</p>
-<p>TimerMixin（ES5）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">这个库并没有跟着React Native一起发布。你需要在项目文件夹下输入npm i react-timer-mixin --save来单独安装它。</div><div class="line"></div><div class="line">var TimerMixin = require(&apos;react-timer-mixin&apos;);</div><div class="line"></div><div class="line">var Component = React.createClass(&#123;</div><div class="line">  mixins: [TimerMixin],</div><div class="line">  componentDidMount: function() &#123;</div><div class="line">    this.setTimeout(</div><div class="line">      () =&gt; &#123; console.log(&apos;这样我就不会导致内存泄露!&apos;); &#125;,</div><div class="line">      500</div><div class="line">    );</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<p>ES6代替<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">import React,&#123;</div><div class="line">  Component</div><div class="line">&#125; from &apos;react&apos;;</div><div class="line"></div><div class="line">export default class Hello extends Component &#123;</div><div class="line">  componentDidMount() &#123;</div><div class="line">    this.timer = setTimeout(</div><div class="line">      () =&gt; &#123; console.log(&apos;把一个定时器的引用挂在this上&apos;); &#125;,</div><div class="line">      500</div><div class="line">    );</div><div class="line">  &#125;</div><div class="line">  componentWillUnmount() &#123;</div><div class="line">    // 如果存在this.timer，则使用clearTimeout清空。</div><div class="line">    // 如果你使用多个timer，那么用多个变量，或者用个数组来保存引用，然后逐个clear</div><div class="line">    this.timer &amp;&amp; clearTimeout(this.timer);</div><div class="line">  &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
 
-      
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- Theme Material -->
+
+    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+            主题 - Material
+            <span class="sidebar-badge badge-circle">i</span>
+        </div>
+    </a>
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
     </div>
-    <footer class="article-footer">
-      <a data-url="http://zxos.github.io/2017/01/06/react_native01/" data-id="cj9sc99xf0008803xmwpt740z" class="article-share-link">Partager</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
 
-
-  
-    <article id="post-TensorFlow笔记01" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/01/05/TensorFlow笔记01/" class="article-date">
-  <time datetime="2017-01-05T12:44:00.000Z" itemprop="datePublished">2017-01-05</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/01/05/TensorFlow笔记01/">TensorFlow笔记</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="TensorFlow安装"><a href="#TensorFlow安装" class="headerlink" title="TensorFlow安装"></a>TensorFlow安装</h4><p>（待）</p>
-<h4 id="MNIST"><a href="#MNIST" class="headerlink" title="MNIST"></a>MNIST</h4>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://zxos.github.io/2017/01/05/TensorFlow笔记01/" data-id="cj9sc99x40003803x5h2t9brh" class="article-share-link">Partager</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-android_design01" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/12/29/android_design01/" class="article-date">
-  <time datetime="2016-12-29T12:29:22.000Z" itemprop="datePublished">2016-12-29</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/12/29/android_design01/">Android的design兼容包</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://zxos.github.io/2016/12/29/android_design01/" data-id="cj9sc99xb0006803x2urchwye" class="article-share-link">Partager</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-
-
-  <nav id="page-nav">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">__('next') &raquo;</a>
-  </nav>
-</section>
-        
-          <aside id="sidebar">
-  
+    <!-- Sidebar Image -->
     
 
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Articles récents</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2017/01/24/android_多线程/">Android多线程</a>
-          </li>
-        
-          <li>
-            <a href="/2017/01/22/高代01/">高等代数与解析几何01</a>
-          </li>
-        
-          <li>
-            <a href="/2017/01/21/机器学习01/">机器学习笔记01</a>
-          </li>
-        
-          <li>
-            <a href="/2017/01/13/小程序笔记01/">微信小程序笔记01</a>
-          </li>
-        
-          <li>
-            <a href="/2017/01/13/Redux01/">Redux笔记01</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
 </aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2017 John Doe<br>
-      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+        <a href="https://twitter.com/twitter" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-twitter">
+                <span class="visuallyhidden">Twitter</span>
+            </button><!--
+     --></a>
     
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <!-- Facebook -->
+    
+        <a href="https://www.facebook.com/facebook" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-facebook">
+                <span class="visuallyhidden">Facebook</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Google + -->
+    
+        <a href="https://www.google.com/" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-gplus">
+                <span class="visuallyhidden">Google Plus</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+    
+    <!-- V2EX -->
+    
+</div>
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>zxos' blog
+            
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
 
 
-<script src="/js/script.js"></script>
+                    <!-- Import JS File -->
 
-  </div>
-</body>
+    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==", true)</script>
+
+
+
+    <script>lsloader.load("js_js","/js/js.min.js?V/53wGualMuiPM3xoetD5Q==", true)</script>
+
+
+
+    <script>lsloader.load("np_js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Swiftye -->
+    
+
+    <!-- Local Search-->
+    
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Import prettify js  -->
+
+
+
+<!-- Window Load -->
+<!-- add class for prettify -->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+    
+</script>
+
+<!-- MathJax Load-->
+
+
+<!-- Bing Background -->
+
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Custom Footer -->
+
+
+
+<script>
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.5.0 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        </body>
+    
 </html>
